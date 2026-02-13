@@ -1,0 +1,194 @@
+@import "tailwindcss";
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ================================
+   GLOBAL DESIGN TOKENS (ROOT)
+================================ */
+
+:root {
+  /* ===== Solid Brand Colors ===== */
+  --primary: #fa9746;
+  /* Luxury Orange */
+  --secondary: #7499f1;
+  /* Trust Blue */
+  --accent: #ffc371;
+  /* Soft Gold */
+  --danger: #ff5f6d;
+  /* Dark Accent Red */
+
+  /* ===== Neutral Colors ===== */
+  --bg-light: #ffffff;
+  /* --bg-dark: #020617; */
+  --bg-dark: #020617d5;
+  /* --bg-dark: #0206175a; */
+  --text-light: #0f172a;
+  --text-dark: #e5e7eb;
+
+  /* ===== Gradients ===== */
+  --gradient-primary: linear-gradient(90deg,
+      #fa9746,
+      #7499f1,
+      #fa9746);
+
+  --gradient-accent: linear-gradient(135deg,
+      #ff5f6d,
+      #ffc371);
+
+  --gradient-dark: linear-gradient(135deg,
+      #020617,
+      #0f172a);
+}
+
+/* ===== Dark Mode Overrides ===== */
+.dark {
+  --bg-light: #020617;
+  --text-light: #e5e7eb;
+}
+
+.font-18 {
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.button {
+  /* display: inline-block; */
+  font-size: 18px;
+  border: 1px solid var(--primary);
+  color: var(--primary);
+  padding: 0.5rem 1.5rem;
+  transition: background 0.4s ease-in-out;
+  border-radius: 0.5rem;
+}
+
+.button:hover {
+  background: var(--primary);
+  color: black;
+  animation-duration: 300;
+  cursor: pointer;
+}
+
+.secondary_button {
+  /* display: inline-block; */
+  font-size: 18px;
+  background: var(--primary);
+  border: 1px solid var(--primary);
+  color: black;
+  padding: 0.5rem 1.5rem;
+  transition: all 0.4s ease-in-out;
+  border-radius: 0.5rem;
+}
+
+.secondary_button:hover {
+  animation-duration: 300;
+  background: transparent;
+  color: var(--primary);
+  cursor: pointer;
+}
+
+.span_line {
+  padding-bottom: 1rem;
+  font-size: 14px;
+  color: var(--primary);
+  font-weight: 400;
+}
+
+.section_sub_title {
+  font-size: 1.125rem;
+  margin-bottom: 0.2rem;
+  font-weight: 500;
+
+}
+
+.section_para {
+  font-size: 1.5rem !important;
+  font-weight: 400;
+  color: var(--bg-dark);
+  padding-bottom: 6px;
+}
+
+.card_para {
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--bg-dark);
+  padding-bottom: 6px;
+}
+
+
+.padding-bottom10 {
+  margin-bottom: 10px !important;
+  background-color: orange;
+}
+
+.padding-bottom14 {
+  padding-bottom: 14px !important;
+  background-color: orange;
+}
+
+.padding-bottom16 {
+  padding-bottom: 16px !important;
+  background-color: orange;
+}
+
+.padding-bottom20 {
+  padding-bottom: 20rem !important;
+  background-color: orange;
+}
+
+
+
+
+
+
+
+
+
+/* 
+<section className="bg-[var(--bg-light)] dark:bg-[var(--bg-dark)]">
+
+<h2 className="text-[var(--text-light)] dark:text-[var(--text-dark)]">Featured Properties </h2>
+
+<h1 className="
+ text-4xl font-bold bg-clip-text text-transparent bg-[var(--gradient-primary)] bg-[length:200%_auto] animate-[gradientMove_4s_linear_infinite] "
+>Luxury Villas </h1>
+
+<div className="bg-[var(--gradient-primary)] p-10 rounded-xl shadow-lg">Welcome to LuxeNest </div>
+
+<div className="border border-[var(--border-light)] dark:border-[var(--border-dark)] rounded-xl p-6">Property Details </div>
+
+<div className="shadow-xl shadow-black/20 dark:shadow-black/60 rounded-lg p-6">Card Shadow Example </div>
+
+<button className="bg-[var(--primary)] hover:bg-[var(--secondary)] text-white px-6 py-3 rounded-xl transition-all duration-300">Explore Property </button>
+
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+| Property         | Tailwind syntax                                              |
+| ---------------- | ------------------------------------------------------------ |
+| Background       | `bg-[var(--secondary)]`                                       |
+| Text color       | `text-[var(--primary)]`                                   |
+| Gradient text    | `bg-clip-text text-transparent bg-[var(--gradient-primary)]` |
+| Gradient bg      | `bg-[var(--gradient-primary)]`                               |
+| Border           | `border border-[var(--border-light)]`                        |
+| Shadow           | `shadow-lg shadow-black/20`                                  |
+| Hover background | `hover:bg-[var(--secondary)]`                                |
+
+*/
