@@ -20,7 +20,7 @@ function App() {
       <PopularAreas />
       {/* <Properties /> */}
       <Clients />
-      {/* <Contact /> */}
+      <Contact />
       {/* <Footer /> */}
     </DarkModeProvider>
   );
