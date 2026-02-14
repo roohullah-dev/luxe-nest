@@ -48,15 +48,17 @@ function Properties() {
   return (
     <section
       id="properties"
-      className={`w-full py-32 transition-colors duration-500
-        ${darkMode ? "bg-black" : "bg-gray-100"}`}
+      className={`w-full py-16 sm:py-20 md:py-24 lg:py-32 transition-colors duration-500 ${
+        darkMode ? "bg-black" : "bg-gray-100"
+      }`}
     >
       {/* HEADER */}
-      <div className="lg:px-40 px-10 mb-28 max-w-3xl">
+      <div className="max-w-[1920px] mx-auto px-4 sm:px-6 md:px-10 lg:px-40 mb-16 sm:mb-16">
         <h1
           data-aos="zoom-in"
-          className={`tracking-[0.35em] text-sm span_line
-            ${darkMode ? "text-red-600" : "text-green-800"}`}
+          className={`tracking-[0.35em] text-sm sm:text-base md:text-lg span_line ${
+            darkMode ? "text-red-600" : "text-green-800"
+          }`}
         >
           FEATURED PROPERTIES
         </h1>
@@ -65,12 +67,11 @@ function Properties() {
       </div>
 
       {/* PROPERTIES */}
-      <div className="flex flex-col gap-40">
+      <div className="flex flex-col gap-20 sm:gap-24 lg:gap-32">
         {properties.map((property, index) => (
           <div
             key={index}
-            className="group grid lg:grid-cols-12 grid-cols-1 items-center gap-16
-              lg:px-40 px-10"
+            className="group grid lg:grid-cols-12 grid-cols-1 items-center gap-10 sm:gap-12 lg:gap-20 px-4 sm:px-6 md:px-10 lg:px-40"
           >
             {/* IMAGE */}
             <div
@@ -81,9 +82,7 @@ function Properties() {
                 <img
                   src={property.img}
                   alt={property.title}
-                  className="w-full h-[520px] object-cover
-                    transition-transform duration-[1200ms]
-                    group-hover:scale-[1.06]"
+                  className="w-full h-[300px] sm:h-[400px] md:h-[480px] lg:h-[520px] object-cover transition-transform duration-[1200ms] group-hover:scale-[1.06]"
                 />
               </div>
             </div>
@@ -92,18 +91,20 @@ function Properties() {
             <div
               data-aos={index % 2 === 0 ? "fade-left" : "fade-right"}
               data-aos-delay="120"
-              className={`lg:col-span-5 flex flex-col gap-6
-                ${index % 2 !== 0 ? "lg:order-1" : ""}`}
+              className={`lg:col-span-5 flex flex-col gap-6 sm:gap-8 ${
+                index % 2 !== 0 ? "lg:order-1" : ""
+              }`}
             >
               <span
-                className={`text-sm tracking-widest uppercase
-                  ${darkMode ? "text-gray-400" : "text-gray-500"}`}
+                className={`text-sm sm:text-base md:text-lg tracking-widest uppercase ${
+                  darkMode ? "text-gray-400" : "text-gray-500"
+                }`}
               >
                 {property.location}
               </span>
 
               <h3
-                className={`section_sub_title ${
+                className={`section_sub_title text-lg sm:text-xl md:text-2xl ${
                   darkMode ? "text-[#fa9746]" : "text-[#fa9746]"
                 }`}
               >
@@ -111,14 +112,15 @@ function Properties() {
               </h3>
 
               <p
-                className={`leading-relaxed
-                  ${darkMode ? "text-gray-400" : "text-gray-600"}`}
+                className={`leading-relaxed text-sm sm:text-base md:text-lg ${
+                  darkMode ? "text-gray-400" : "text-gray-600"
+                }`}
               >
                 Thoughtfully designed spaces that balance privacy, nature, and
                 modern comfort—crafted for elevated living in Las Vegas.
               </p>
 
-              <div className="flex items-center gap-10 mt-6">
+              <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-10 mt-6">
                 <span className="text-2xl font-semibold text-red-600">
                   {property.price}
                 </span>
@@ -128,13 +130,9 @@ function Properties() {
                   href={property.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={`relative font-medium pb-1
-                    ${darkMode ? "text-white" : "text-black"}
-                    after:absolute after:left-0 after:bottom-0
-                    after:w-0 after:h-[1px]
-                    after:bg-current
-                    after:transition-all after:duration-300
-                    hover:after:w-full hover:text-red-600`}
+                  className={`relative font-medium pb-1 ${
+                    darkMode ? "text-white" : "text-black"
+                  } after:absolute after:left-0 after:bottom-0 after:w-0 after:h-[1px] after:bg-current after:transition-all after:duration-300 hover:after:w-full hover:text-red-600`}
                 >
                   Explore Property
                 </a>

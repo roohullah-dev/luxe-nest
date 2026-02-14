@@ -7,10 +7,10 @@ import {
 } from "react-icons/fa";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { useDarkMode } from "../components/DarkModeContext"; // import context
+import { useDarkMode } from "../components/DarkModeContext";
 
 function Footer() {
-  const { darkMode } = useDarkMode(); // get dark mode state
+  const { darkMode } = useDarkMode();
   const [email, setEmail] = useState("");
 
   useEffect(() => {
@@ -32,10 +32,11 @@ function Footer() {
 
   return (
     <footer
-      className={`pt-16 pb-8 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.2)]
- ${darkMode ? "bg-gray-900 text-gray-200" : "bg-gray-100 text-gray-900"}`}
+      className={`pt-12 sm:pt-16 pb-8 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.2)] ${
+        darkMode ? "bg-gray-900 text-gray-200" : "bg-gray-100 text-gray-900"
+      }`}
     >
-      <div className="max-w-[90%] mx-auto grid lg:grid-cols-4 md:grid-cols-2 gap-12 text-center sm:text-center">
+      <div className="max-w-full sm:max-w-[95%] md:max-w-[90%] lg:max-w-[1200px] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 lg:gap-12 text-center lg:text-left">
         {/* Logo + Description */}
         <div
           data-aos="fade-up"
@@ -47,11 +48,16 @@ function Footer() {
           >
             LV<span className="font-light">Estates</span>
           </h2>
-          <p className={darkMode ? "text-gray-400" : "text-gray-700"}>
+          <p
+            className={
+              darkMode
+                ? "text-gray-400 text-sm sm:text-base"
+                : "text-gray-700 text-sm sm:text-base"
+            }
+          >
             Providing premium real estate solutions for your dream home. Explore
-            luxury apartments, villas, and commercial properties with ease.
+            luxury apartments, villas, and commercial properties.
           </p>
-
           {/* Social Icons */}
           <div className="flex items-center gap-4 mt-4 justify-center lg:justify-start">
             {[FaFacebookF, FaInstagram, FaLinkedinIn, FaTwitter].map(
@@ -79,14 +85,14 @@ function Footer() {
         <div
           data-aos="fade-right"
           data-aos-delay="200"
-          className="flex flex-col items-center lg:items-start"
+          className="flex flex-col gap-3 items-center lg:items-start"
         >
           <h3
             className={`text-xl font-serif font-semibold mb-4 ${darkMode ? "text-white" : "text-gray-900"}`}
           >
             Quick Links
           </h3>
-          <ul className="flex flex-col gap-3">
+          <ul className="flex flex-col gap-2">
             {["#hero", "#about", "#popular-areas", "#clients", "#contact"].map(
               (href, i) => (
                 <li key={i} data-aos="fade-left" data-aos-delay={250 + i * 100}>
@@ -108,7 +114,7 @@ function Footer() {
         <div
           data-aos="fade-up"
           data-aos-delay="300"
-          className="flex flex-col items-center lg:items-start"
+          className="flex flex-col gap-2 items-center lg:items-start"
         >
           <h3
             className={`text-xl font-serif font-semibold mb-4 ${darkMode ? "text-white" : "text-gray-900"}`}
@@ -116,18 +122,18 @@ function Footer() {
             Contact
           </h3>
           <p
-            className={`flex items-center gap-2 mb-2 justify-center lg:justify-start ${darkMode ? "text-gray-400" : "text-gray-700"}`}
+            className={`flex items-center gap-2 ${darkMode ? "text-gray-400" : "text-gray-700"}`}
           >
             <span className="text-red-600">🏠</span> 123 Luxury Avenue, Estate
             City
           </p>
           <p
-            className={`flex items-center gap-2 mb-2 justify-center lg:justify-start ${darkMode ? "text-gray-400" : "text-gray-700"}`}
+            className={`flex items-center gap-2 ${darkMode ? "text-gray-400" : "text-gray-700"}`}
           >
             <span className="text-red-600">📞</span> +123 456 7890
           </p>
           <p
-            className={`flex items-center gap-2 justify-center lg:justify-start ${darkMode ? "text-gray-400" : "text-gray-700"}`}
+            className={`flex items-center gap-2 ${darkMode ? "text-gray-400" : "text-gray-700"}`}
           >
             <span className="text-red-600">✉️</span> contact@luxenest.com
           </p>
@@ -137,7 +143,7 @@ function Footer() {
         <div
           data-aos="fade-left"
           data-aos-delay="400"
-          className="flex flex-col items-center lg:items-start"
+          className="flex flex-col gap-3 items-center lg:items-start"
         >
           <h3
             className={`text-xl font-serif font-semibold mb-4 ${darkMode ? "text-white" : "text-gray-900"}`}
@@ -145,7 +151,7 @@ function Footer() {
             Newsletter
           </h3>
           <p
-            className={`mb-4 text-center lg:text-left ${darkMode ? "text-gray-400" : "text-gray-700"}`}
+            className={`text-sm sm:text-base mb-4 text-center lg:text-left ${darkMode ? "text-gray-400" : "text-gray-700"}`}
           >
             Subscribe to receive the latest property listings and updates.
           </p>
@@ -158,12 +164,12 @@ function Footer() {
               placeholder="Your email address"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
+              required
               className={`w-full p-3 rounded-xl border focus:outline-none focus:ring-2 ${
                 darkMode
                   ? "border-gray-700 focus:ring-red-600 bg-gray-800 text-gray-200"
                   : "border-gray-300 focus:ring-red-600 bg-white text-gray-900"
               }`}
-              required
             />
             <button
               type="submit"
@@ -183,7 +189,7 @@ function Footer() {
       <div
         data-aos="fade-up"
         data-aos-delay="500"
-        className={`mt-12 border-t pt-6 text-center text-sm ${
+        className={`mt-10 sm:mt-12 border-t pt-6 text-center text-sm ${
           darkMode
             ? "border-gray-700 text-gray-500"
             : "border-gray-300 text-gray-600"

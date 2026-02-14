@@ -19,7 +19,7 @@ function Services() {
       duration: 900,
       easing: "ease-out-cubic",
       delay: 50,
-      once: true, // animate only once
+      once: true,
     });
   }, []);
 
@@ -53,13 +53,13 @@ function Services() {
   return (
     <section
       id="services"
-      className={`py-16 ${
+      className={`py-16 sm:py-20 md:py-24 ${
         darkMode ? "bg-black text-gray-200" : "bg-white text-gray-800"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-10">
+      <div className="max-w-[1920px] mx-auto px-4 sm:px-6 md:px-10 lg:px-40">
         {/* TITLE */}
-        <div className="relative inline-block mb-16 text-center lg:text-left">
+        <div className="relative inline-block mb-16 sm:mb-16 text-center lg:text-left">
           <h1
             data-aos="zoom-in"
             className="span_line tracking-[0.35em] text-sm sm:text-base md:text-lg"
@@ -70,7 +70,7 @@ function Services() {
         </div>
 
         {/* SERVICES GRID */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 text-center gap-8 sm:gap-10 lg:gap-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 text-center gap-10 sm:gap-12 lg:gap-20">
           {services.map((item, index) => (
             <div
               key={index}
@@ -92,14 +92,12 @@ function Services() {
                     darkMode ? "bg-[#fa9746]" : "bg-[#fa9746]"
                   }`}
                 />
-
                 {/* horizontal line */}
                 <span
                   className={`absolute left-[50%] top-[66%] w-[1px] h-[88%] rotate-90 ${
                     darkMode ? "bg-[#fa9746]" : "bg-[#fa9746]"
                   }`}
                 />
-
                 {/* ICON */}
                 <span
                   className={`text-[32px] sm:text-[36px] md:text-[40px] -rotate-45 ${
@@ -120,7 +118,7 @@ function Services() {
                   {item.title}
                 </h5>
                 <p
-                  className={`text-xs sm:text-sm md:text-base mt-2 ${
+                  className={`text-xs sm:text-sm md:text-base mt-2 leading-relaxed ${
                     darkMode ? "text-white" : "text-gray-700"
                   }`}
                 >
