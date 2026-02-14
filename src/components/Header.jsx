@@ -15,7 +15,6 @@ function Navbar() {
     { name: "Contact", href: "#contact" },
   ];
 
-  // Scroll listener
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 40);
@@ -35,7 +34,6 @@ function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Smooth scroll
   const handleNavClick = (e, href) => {
     e.preventDefault();
     const section = document.querySelector(href);
@@ -49,34 +47,36 @@ function Navbar() {
     <>
       {/* NAVBAR */}
       <header
-        className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 
-          ${scrolled ? "bg-black/60 backdrop-blur-sm" : "bg-transparent"}`}
+        className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${
+          scrolled ? "bg-black/60 backdrop-blur-sm" : "bg-transparent"
+        }`}
       >
-        <nav className="w-full m-auto lg:px-40 px-6 py-3 flex items-center justify-between shadow-lg">
+        <nav className="w-full max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-40 py-3 flex items-center justify-between shadow-lg">
           {/* LOGO */}
           <a
             href="#hero"
             onClick={(e) => handleNavClick(e, "#hero")}
-            className="text-white text-2xl font-semibold tracking-wide"
+            className="text-white text-2xl sm:text-2xl md:text-3xl font-semibold tracking-wide"
           >
             Luxe<span className="font-light">Nest</span>
           </a>
 
           {/* DESKTOP MENU */}
-          <ul className="hidden lg:flex items-center gap-6">
+          <ul className="hidden lg:flex items-center gap-4 md:gap-6">
             {navLinks.map((link, i) => (
               <li key={i}>
                 <a
                   href={link.href}
                   onClick={(e) => handleNavClick(e, link.href)}
-                  className={`relative  tracking-widest transition-all duration-300
-                    text-white hover:text-[#fa9746]
-                    ${activeSection === link.href ? "text-[#fa9746]" : ""}`}
+                  className={`relative tracking-widest transition-all duration-300 text-white hover:text-[#fa9746] ${
+                    activeSection === link.href ? "text-[#fa9746]" : ""
+                  }`}
                 >
                   {link.name}
                   <span
-                    className={`absolute left-0 -bottom-1 h-[2px] bg-[#fa9746] transition-all duration-300
-                      ${activeSection === link.href ? "w-full" : "w-0"}`}
+                    className={`absolute left-0 -bottom-1 h-[2px] bg-[#fa9746] transition-all duration-300 ${
+                      activeSection === link.href ? "w-full" : "w-0"
+                    }`}
                   />
                 </a>
               </li>
@@ -84,11 +84,11 @@ function Navbar() {
           </ul>
 
           {/* RIGHT ACTIONS */}
-          <div className="flex items-center gap-6">
+          <div className="flex items-center gap-4 md:gap-6">
             {/* DARK MODE */}
             <button
               onClick={toggleDarkMode}
-              className="text-white hover:text-[#fa9746] transition"
+              className="text-white hover:text-[#fa9746] transition text-sm sm:text-base"
             >
               {darkMode ? "Light" : "Dark"}
             </button>
@@ -97,7 +97,7 @@ function Navbar() {
             <a
               href="#contact"
               onClick={(e) => handleNavClick(e, "#contact")}
-              className="hidden lg:inline-block button tracking-widest"
+              className="hidden lg:inline-block button tracking-widest px-3 py-2 text-sm sm:text-base"
             >
               Contact
             </a>
@@ -105,7 +105,7 @@ function Navbar() {
             {/* MOBILE MENU ICON */}
             <button
               onClick={() => setMenuOpen(true)}
-              className="lg:hidden text-white text-2xl hover:text-[#fa9746] transition-transform hover:scale-110"
+              className="lg:hidden text-white text-2xl sm:text-3xl hover:text-[#fa9746] transition-transform hover:scale-110"
             >
               ☰
             </button>
@@ -113,78 +113,64 @@ function Navbar() {
         </nav>
       </header>
 
-      {/* RIGHT SIDE MOBILE DRAWER */}
+      {/* MOBILE DRAWER */}
       <div
-        className={`fixed inset-0 z-[999] ${menuOpen ? "pointer-events-auto" : "pointer-events-none"}`}
+        className={`fixed inset-0 z-[999] ${
+          menuOpen ? "pointer-events-auto" : "pointer-events-none"
+        }`}
       >
         {/* BACKDROP */}
         <div
           onClick={() => setMenuOpen(false)}
-          className={`absolute inset-0 bg-black/50 backdrop-blur-sm transition-opacity duration-500
-            ${menuOpen ? "opacity-100" : "opacity-0"}`}
+          className={`absolute inset-0 bg-black/50 backdrop-blur-sm transition-opacity duration-500 ${
+            menuOpen ? "opacity-100" : "opacity-0"
+          }`}
         />
 
-        {/* DRAWER PANEL */}
-
-        {/* MOBILE RIGHT DRAWER */}
+        {/* RIGHT PANEL */}
         <div
-          className={`fixed inset-0 z-[999] ${menuOpen ? "" : "pointer-events-none"}`}
+          className={`fixed top-0 right-0 h-full w-[85%] max-w-[320px] bg-white dark:bg-black shadow-2xl transition-transform duration-500 ease-in-out ${
+            menuOpen ? "translate-x-0" : "translate-x-full"
+          }`}
         >
-          {/* BACKDROP */}
-          <div
-            onClick={() => setMenuOpen(false)}
-            className={`absolute inset-0 bg-black/40 transition-opacity duration-500
-      ${menuOpen ? "opacity-100" : "opacity-0"}`}
-          />
+          {/* HEADER */}
+          <div className="flex items-center justify-between px-5 py-4 border-b border-gray-200 dark:border-gray-700">
+            <span className="text-lg sm:text-xl font-semibold text-black dark:text-white">
+              Luxe<span className="font-light">Nest</span>
+            </span>
 
-          {/* RIGHT PANEL */}
-          <div
-            className={`absolute top-0 right-0 h-full w-[320px] max-w-[85%]
-      bg-white dark:bg-black shadow-2xl
-      transition-transform duration-500 ease-in-out
-      ${menuOpen ? "translate-x-0" : "translate-x-full"}`}
-          >
-            {/* HEADER */}
-            <div className="flex items-center justify-between px-5 py-4 border-b border-gray-200 dark:border-gray-700">
-              <span className="text-lg font-semibold text-black dark:text-white">
-                Luxe<span className="font-light">Nest</span>
-              </span>
+            {/* CLOSE BUTTON */}
+            <button
+              onClick={() => setMenuOpen(false)}
+              className="text-2xl sm:text-3xl font-bold text-black dark:text-white hover:text-[#fa9746] transition"
+            >
+              ✕
+            </button>
+          </div>
 
-              {/* CLOSE BUTTON */}
-              <button
-                onClick={() => setMenuOpen(false)}
-                className="text-2xl font-bold text-black dark:text-white hover:text-[#fa9746] transition"
-              >
-                ✕
-              </button>
-            </div>
-
-            {/* MENU LINKS */}
-            <div className="flex flex-col gap-5 px-6 py-6 text-left">
-              {navLinks.map((link, i) => (
-                <a
-                  key={i}
-                  href={link.href}
-                  onClick={(e) => handleNavClick(e, link.href)}
-                  className={`text-base tracking-widest transition-all duration-300
-            ${darkMode ? "text-gray-200" : "text-gray-700"}
-            hover:text-[#fa9746] hover:translate-x-2`}
-                >
-                  {link.name}
-                </a>
-              ))}
-
-              {/* CONTACT BUTTON */}
+          {/* MENU LINKS */}
+          <div className="flex flex-col gap-4 sm:gap-5 px-6 py-6 text-left">
+            {navLinks.map((link, i) => (
               <a
-                href="#contact"
-                onClick={(e) => handleNavClick(e, "#contact")}
-                className="mt-6 border border-[#fa9746] text-[#fa9746]
-          hover:bg-[#fa9746] hover:text-white px-6 py-2 rounded tracking-widest
-          transition text-center"
+                key={i}
+                href={link.href}
+                onClick={(e) => handleNavClick(e, link.href)}
+                className={`text-base sm:text-lg tracking-widest transition-all duration-300 ${
+                  darkMode ? "text-gray-200" : "text-gray-700"
+                } hover:text-[#fa9746] hover:translate-x-2`}
               >
-                Contact
+                {link.name}
               </a>
-            </div>
+            ))}
+
+            {/* CONTACT BUTTON */}
+            <a
+              href="#contact"
+              onClick={(e) => handleNavClick(e, "#contact")}
+              className="mt-6 border border-[#fa9746] text-[#fa9746] hover:bg-[#fa9746] hover:text-white px-6 py-2 rounded tracking-widest text-center text-sm sm:text-base"
+            >
+              Contact
+            </a>
           </div>
         </div>
       </div>

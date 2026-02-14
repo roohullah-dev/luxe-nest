@@ -57,20 +57,21 @@ function Services() {
         darkMode ? "bg-black text-gray-200" : "bg-white text-gray-800"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-10">
+      <div className="max-w-7xl mx-auto px-6 sm:px-10">
         {/* TITLE */}
-        <div className="relative inline-block mb-16 text-center lg:text-left">
-          <h1
-            data-aos="zoom-in"
-            className="span_line tracking-[0.35em] text-sm sm:text-base md:text-lg"
-          >
+        <div className="relative inline-block mb-16">
+          <h1 data-aos="zoom-in" className="span_line tracking-[0.35em]">
             WHO WE ARE
           </h1>
           <Title title="Services" />
+
+          {/* decorative squares */}
+          {/* <span className="absolute -left-7 top-1 w-5 h-5 bg-[#7499f1] rotate-45 rounded shadow-md" />
+          <span className="absolute -left-5 top-8 w-3.5 h-3.5 bg-[#7499f1] rotate-45 rounded shadow-md" /> */}
         </div>
 
         {/* SERVICES GRID */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 text-center gap-8 sm:gap-10 lg:gap-12">
+        <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 text-center gap-12">
           {services.map((item, index) => (
             <div
               key={index}
@@ -80,7 +81,7 @@ function Services() {
             >
               {/* SQUARE ICON */}
               <div
-                className={`relative w-[80px] sm:w-[90px] md:w-[100px] h-[80px] sm:h-[90px] md:h-[100px] mx-auto mb-6 sm:mb-8 md:mb-10 rotate-45 rounded-xl flex items-center justify-center ${
+                className={`relative w-[100px] h-[100px] mx-auto mb-10 rotate-45 rounded-xl flex items-center justify-center ${
                   darkMode
                     ? "bg-gray-800 border border-gray-700 shadow-lg"
                     : "bg-[#7499f1] border-2 border-dotted border-[#eaf3fa] shadow-[0_0_27px_0_#ccc]"
@@ -88,21 +89,21 @@ function Services() {
               >
                 {/* vertical line */}
                 <span
-                  className={`absolute -left-1 top-0 w-[1px] h-full ${
+                  className={`absolute -left-2 top-0 w-[1px] h-full ${
                     darkMode ? "bg-[#fa9746]" : "bg-[#fa9746]"
                   }`}
                 />
 
                 {/* horizontal line */}
                 <span
-                  className={`absolute left-[50%] top-[66%] w-[1px] h-[88%] rotate-90 ${
+                  className={`absolute left-[50px] top-[66px] w-[1px] h-[88%] rotate-90 ${
                     darkMode ? "bg-[#fa9746]" : "bg-[#fa9746]"
                   }`}
                 />
 
                 {/* ICON */}
                 <span
-                  className={`text-[32px] sm:text-[36px] md:text-[40px] -rotate-45 ${
+                  className={`text-[40px] -rotate-45 ${
                     darkMode ? "text-gray-200" : "text-[#eaf3fa]"
                   }`}
                 >
@@ -113,16 +114,14 @@ function Services() {
               {/* TEXT */}
               <div>
                 <h5
-                  className={`section_sub_title text-sm sm:text-base md:text-lg ${
+                  className={`section_sub_title ${
                     darkMode ? "text-[#fa9746]" : "text-[#fa9746]"
                   }`}
                 >
                   {item.title}
                 </h5>
                 <p
-                  className={`text-xs sm:text-sm md:text-base mt-2 ${
-                    darkMode ? "text-white" : "text-gray-700"
-                  }`}
+                  className={` ${darkMode ? "text-white" : "text-[section_para]"}  `}
                 >
                   {item.desc}
                 </p>

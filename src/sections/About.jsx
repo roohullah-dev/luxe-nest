@@ -14,41 +14,46 @@ function About() {
       delay: 100,
     });
   }, []);
-  const { darkMode, toggleDarkMode } = useDarkMode();
+
+  const { darkMode } = useDarkMode();
+
   return (
     <section
       id="about"
       className={`py-16 ${
         darkMode ? "bg-black text-gray-200" : "bg-white text-gray-800"
-      } w-full m-auto lg:px-40 px-10 py-20 grid lg:grid-cols-2 grid-cols-1 gap-10 justify-center items-center`}
+      } w-full m-auto px-4 sm:px-6 md:px-10 lg:px-40 grid lg:grid-cols-2 grid-cols-1 gap-10 justify-center items-center`}
     >
-      <div>
+      {/* IMAGE */}
+      <div className="flex justify-center lg:justify-start">
         <img
           src={aboutimg}
           data-aos="zoom-in"
-          className="rounded-2xl lg:w-[500px] lg:h-[600px]"
+          className="rounded-2xl w-full sm:w-[350px] md:w-[450px] lg:w-[500px] h-auto lg:h-[600px] object-cover"
           alt="About Image"
         />
       </div>
 
-      <div className="flex flex-col justify-center items-start gap-8">
-        <h1 data-aos="zoom-in" className="span_line tracking-[0.35em]">
+      {/* CONTENT */}
+      <div className="flex flex-col justify-center items-start gap-6 sm:gap-8 text-center lg:text-left">
+        <h1
+          data-aos="zoom-in"
+          className="span_line tracking-[0.35em] text-sm sm:text-base md:text-lg"
+        >
           WHO WE ARE
         </h1>
         <Title title="About us" />
         <p
           data-aos="zoom-in"
-          className={`text-xl text-gray-60 text-justify font-light
-${darkMode ? "text-white" : "text-black"}`}
+          className={`text-base sm:text-lg md:text-xl text-justify font-light ${
+            darkMode ? "text-white" : "text-black"
+          }`}
         >
           Lorem ipsum dolor sit, amet consectetur adipisicing elit. Assumenda
           aliquid nemo quod culpa placeat eos. Esse impedit quam distinctio
           obcaecati unde nemo doloremque minus laboriosam?
         </p>
-        <button
-          // className="bg-red-600 dark:bg-red-700 hover:bg-black dark:hover:bg-white dark:hover:text-black text-lg px-10 py-4  text-white font-semibold rounded-xl cursor-pointer transform hover:scale-105 transition-all duration-300 ease-in-out border"
-          className="secondary_button lg:inline-block tracking-widest"
-        >
+        <button className="secondary_button lg:inline-block tracking-widest w-full sm:w-auto text-center">
           Read More
         </button>
       </div>

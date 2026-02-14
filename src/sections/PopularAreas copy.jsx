@@ -44,21 +44,36 @@ function PopularAreas() {
   return (
     <section
       id="popular-areas"
-      className={`${darkMode ? "dark bg-black" : "light bg-transparent"} w-full m-auto lg:px-40 md:px-10 px-6 py-20 sm:py-32`}
+      className={`${darkMode ? "dark bg-black" : "light bg-transparent"}
+      w-full m-auto lg:px-40 px-10 py-32`}
     >
       {/* Header */}
-      <div className="inline-block mb-12 sm:mb-16 text-center lg:text-left">
-        <h1
-          data-aos="zoom-in"
-          className="span_line tracking-[0.35em] text-sm sm:text-base"
+      <div className="inline-block mb-16">
+        {/* <h1
+          data-aos="fade-up"
+          className="text-green-800 dark:text-red-700 tracking-[0.35em] text-sm"
         >
+          POPULAR AREAS
+        </h1> */}
+        <h1 data-aos="zoom-in" className="span_line tracking-[0.35em]">
           WHO WE ARE
         </h1>
         <Title title="Popular Areas" />
+
+        {/* <h2
+          data-aos="fade-up"
+          data-aos-delay="120"
+          className="text-black dark:text-black text-[46px] font-semibold leading-tight mt-6"
+        >
+          Designed neighborhoods
+          <span className="block font-normal text-gray-600">
+            for elevated lifestyles
+          </span>
+        </h2> */}
       </div>
 
       {/* Advanced Cards */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 sm:gap-12 lg:gap-20">
+      <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-20">
         {areas.map((area, index) => (
           <div
             key={index}
@@ -67,36 +82,35 @@ function PopularAreas() {
             className="relative group"
           >
             {/* Image block */}
-            <div className="relative z-10 w-full h-[220px] sm:h-[240px] md:h-[260px] rounded-2xl overflow-hidden">
+            <div className="relative z-10 w-full h-[260px] rounded-2xl overflow-hidden">
               <img
                 src={area.img}
                 alt={area.title}
-                className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+                className="w-full h-[82%] object-cover transition-transform duration-700 ease-out
+                group-hover:scale-[1.03]"
               />
             </div>
 
             {/* Content card */}
             <div
-              className={`relative -mt-12 sm:-mt-14 md:-mt-16 p-6 sm:p-8 md:p-10 rounded-3xl
-                ${darkMode ? "bg-gray-900" : "bg-white"}
-                shadow-[0_30px_80px_rgba(0,0,0,0.12)]
-                transition-all duration-500
-                group-hover:-translate-y-2`}
+              className={`relative -mt-16 p-10 rounded-3xl
+              ${darkMode ? "bg-gray-900" : "bg-white"}
+              shadow-[0_30px_80px_rgba(0,0,0,0.12)]
+              transition-all duration-500
+              group-hover:-translate-y-2`}
             >
-              <h3 className="section_sub_title text-sm sm:text-base md:text-lg dark:text-[#fa9746]">
+              <h3 className="section_sub_title dark:text-[#fa9746]">
                 {area.title}
               </h3>
 
               <p
-                className={`mt-2 text-xs sm:text-sm md:text-base leading-relaxed ${
-                  darkMode ? "text-white" : "text-black"
-                }`}
+                className={`mt-2 text-sm leading-relaxed ${darkMode ? "text-white" : "text-black"}`}
               >
                 {area.description}
               </p>
 
-              <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mt-6 sm:mt-8 gap-2 sm:gap-0">
-                <span className="text-xs sm:text-sm tracking-wide text-gray-400">
+              <div className="flex items-center justify-between mt-8">
+                <span className="text-sm tracking-wide text-gray-400">
                   {area.listings}
                 </span>
 
