@@ -4,9 +4,9 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Hero from "./sections/Hero";
 import About from "./sections/About";
-// import Services from "./sections/Services";
+import Services from "./sections/Services";
 import PopularAreas from "./sections/PopularAreas";
-// import Properties from "./sections/Properties";
+import Properties from "./sections/Properties";
 import Clients from "./sections/Clients";
 import Contact from "./sections/Contact";
 
@@ -16,12 +16,12 @@ function App() {
       <Header />
       <Hero />
       <About />
-      {/* <Services /> */}
+      <Services />
       <PopularAreas />
-      {/* <Properties /> */}
+      <Properties />
       <Clients />
       <Contact />
-      {/* <Footer /> */}
+      <Footer />
     </DarkModeProvider>
   );
 }
