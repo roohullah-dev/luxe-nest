@@ -4,6 +4,9 @@ import {
   FaInstagram,
   FaLinkedinIn,
   FaTwitter,
+  FaEnvelope,
+  FaPhone,
+  FaMapMarkerAlt,
 } from "react-icons/fa";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -15,9 +18,9 @@ function Footer() {
 
   useEffect(() => {
     AOS.init({
-      offset: 150,
-      duration: 1000,
-      easing: "ease-out-back",
+      offset: 120,
+      duration: 800,
+      easing: "ease-in-out",
       once: true,
     });
   }, []);
@@ -25,60 +28,54 @@ function Footer() {
   const handleSubscribe = (e) => {
     e.preventDefault();
     if (!email) return alert("Please enter your email!");
-    console.log("Subscribed:", email);
     alert("Thank you for subscribing!");
     setEmail("");
   };
 
   return (
     <footer
-      className={`pt-12 sm:pt-16 pb-8 overflow-x-hidden shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.2)] ${
-        darkMode ? "bg-gray-900 text-gray-200" : "bg-gray-100 text-gray-900"
+      className={`w-full pt-16 pb-4 transition-colors duration-500 ${
+        darkMode ? "bg-[#111111] text-gray-200" : "bg-white text-gray-900"
       }`}
     >
-      {/* CONTAINER FIXED */}
-      <div className="max-w-[1920px] mx-auto px-4 sm:px-6 md:px-10 lg:px-40">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 lg:gap-12 text-center lg:text-left">
-          {/* Logo + Description */}
+      {/* Main Container aligned with Header */}
+      <div className="max-w-[1600px] mx-auto px-6 sm:px-10 lg:px-20">
+        <div className="grid grid-cols-1 lg:grid-cols-4 gap-10 sm:gap-16">
+          {/* Left: Branding / Description */}
           <div
             data-aos="fade-up"
             data-aos-delay="100"
-            className="flex flex-col gap-4 items-center lg:items-start"
+            className="flex flex-col gap-5 lg:col-span-1"
           >
             <h2
-              className={`text-2xl font-serif font-bold ${
+              className={`text-3xl sm:text-4xl font-serif font-bold ${
                 darkMode ? "text-white" : "text-gray-900"
               }`}
             >
               LV<span className="font-light">Estates</span>
             </h2>
-
             <p
-              className={
-                darkMode
-                  ? "text-gray-400 text-sm sm:text-base"
-                  : "text-gray-700 text-sm sm:text-base"
-              }
+              className={`text-sm sm:text-base leading-relaxed ${
+                darkMode ? "text-gray-400" : "text-gray-600"
+              }`}
             >
-              Providing premium real estate solutions for your dream home.
-              Explore luxury apartments, villas, and commercial properties.
+              Luxury real estate solutions tailored for your dream home. Explore
+              modern apartments, villas, and commercial properties.
             </p>
-
-            {/* Social Icons */}
-            <div className="flex items-center gap-4 mt-4 justify-center lg:justify-start">
+            <div className="flex gap-4 mt-3">
               {[FaFacebookF, FaInstagram, FaLinkedinIn, FaTwitter].map(
                 (Icon, i) => (
                   <a
                     key={i}
                     href="#"
-                    className={`p-2 rounded-full transition-transform transform hover:scale-125 ${
-                      darkMode
-                        ? "bg-gray-800 hover:bg-red-600"
-                        : "bg-gray-200 hover:bg-red-500"
-                    }`}
-                    aria-label={`Visit our ${Icon.name} page`}
                     data-aos="zoom-in"
                     data-aos-delay={150 + i * 100}
+                    className={`p-3 rounded-full shadow-md transition-transform transform hover:scale-110 ${
+                      darkMode
+                        ? "bg-[#222222] hover:bg-[#fa9746]"
+                        : "bg-gray-100 hover:bg-[#fa9746]"
+                    }`}
+                    aria-label={`Visit our ${Icon.name} page`}
                   >
                     <Icon
                       className={darkMode ? "text-white" : "text-gray-900"}
@@ -93,32 +90,31 @@ function Footer() {
           <div
             data-aos="fade-right"
             data-aos-delay="200"
-            className="flex flex-col gap-3 items-center lg:items-start"
+            className="flex flex-col gap-4"
           >
             <h3
-              className={`text-xl font-serif font-semibold mb-4 ${
+              className={`text-xl sm:text-2xl font-semibold ${
                 darkMode ? "text-white" : "text-gray-900"
               }`}
             >
               Quick Links
             </h3>
-
-            <ul className="flex flex-col gap-2">
+            <ul className="flex flex-col gap-3 text-sm sm:text-base">
               {[
                 "#hero",
                 "#about",
                 "#popular-areas",
                 "#clients",
                 "#contact",
-              ].map((href, i) => (
+              ].map((link, i) => (
                 <li key={i} data-aos="fade-left" data-aos-delay={250 + i * 100}>
                   <a
-                    href={href}
-                    className={`transition-colors hover:text-red-600 ${
+                    href={link}
+                    className={`relative transition-colors hover:text-[#fa9746] ${
                       darkMode ? "text-gray-400" : "text-gray-700"
                     }`}
                   >
-                    {href.replace("#", "").replace("-", " ").toUpperCase()}
+                    {link.replace("#", "").replace("-", " ").toUpperCase()}
                   </a>
                 </li>
               ))}
@@ -129,64 +125,75 @@ function Footer() {
           <div
             data-aos="fade-up"
             data-aos-delay="300"
-            className="flex flex-col gap-2 items-center lg:items-start"
+            className="flex flex-col gap-4"
           >
             <h3
-              className={`text-xl font-serif font-semibold mb-4 ${
+              className={`text-xl sm:text-2xl font-semibold ${
                 darkMode ? "text-white" : "text-gray-900"
               }`}
             >
               Contact
             </h3>
-
-            <p
-              className={`flex items-center gap-2 ${
-                darkMode ? "text-gray-400" : "text-gray-700"
+            <a
+              href="mailto:contact@luxenest.com"
+              data-aos="fade-up"
+              data-aos-delay="350"
+              className={`flex items-center gap-3 p-3 rounded-lg transition-colors hover:bg-[#fa9746] hover:text-white ${
+                darkMode
+                  ? "bg-[#222222] text-gray-400"
+                  : "bg-gray-100 text-gray-700"
               }`}
             >
-              <span className="text-red-600">🏠</span> 123 Luxury Avenue, Estate
-              City
-            </p>
-
-            <p
-              className={`flex items-center gap-2 ${
-                darkMode ? "text-gray-400" : "text-gray-700"
+              <FaEnvelope /> contact@luxenest.com
+            </a>
+            <a
+              href="tel:+1234567890"
+              data-aos="fade-up"
+              data-aos-delay="400"
+              className={`flex items-center gap-3 p-3 rounded-lg transition-colors hover:bg-[#fa9746] hover:text-white ${
+                darkMode
+                  ? "bg-[#222222] text-gray-400"
+                  : "bg-gray-100 text-gray-700"
               }`}
             >
-              <span className="text-red-600">📞</span> +123 456 7890
-            </p>
-
-            <p
-              className={`flex items-center gap-2 ${
-                darkMode ? "text-gray-400" : "text-gray-700"
+              <FaPhone /> +123 456 7890
+            </a>
+            <a
+              href="https://www.google.com/maps?q=123+Luxury+Avenue+Estate+City"
+              target="_blank"
+              rel="noopener noreferrer"
+              data-aos="fade-up"
+              data-aos-delay="450"
+              className={`flex items-center gap-3 p-3 rounded-lg transition-colors hover:bg-[#fa9746] hover:text-white ${
+                darkMode
+                  ? "bg-[#222222] text-gray-400"
+                  : "bg-gray-100 text-gray-700"
               }`}
             >
-              <span className="text-red-600">✉️</span> contact@luxenest.com
-            </p>
+              <FaMapMarkerAlt /> 123 Luxury Avenue, Estate City
+            </a>
           </div>
 
           {/* Newsletter */}
           <div
             data-aos="fade-left"
-            data-aos-delay="400"
-            className="flex flex-col gap-3 items-center lg:items-start"
+            data-aos-delay="500"
+            className="flex flex-col gap-4"
           >
             <h3
-              className={`text-xl font-serif font-semibold mb-4 ${
+              className={`text-xl sm:text-2xl font-semibold ${
                 darkMode ? "text-white" : "text-gray-900"
               }`}
             >
               Newsletter
             </h3>
-
             <p
-              className={`text-sm sm:text-base mb-4 text-center lg:text-left ${
+              className={`text-sm sm:text-base leading-relaxed ${
                 darkMode ? "text-gray-400" : "text-gray-700"
               }`}
             >
-              Subscribe to receive the latest property listings and updates.
+              Subscribe to get the latest property listings and updates.
             </p>
-
             <form
               className="flex flex-col gap-3 w-full"
               onSubmit={handleSubscribe}
@@ -199,18 +206,15 @@ function Footer() {
                 required
                 className={`w-full p-3 rounded-xl border focus:outline-none focus:ring-2 ${
                   darkMode
-                    ? "border-gray-700 focus:ring-red-600 bg-gray-800 text-gray-200"
-                    : "border-gray-300 focus:ring-red-600 bg-white text-gray-900"
+                    ? "border-gray-700 focus:ring-[#fa9746] bg-[#222222] text-gray-200"
+                    : "border-gray-300 focus:ring-[#fa9746] bg-white text-gray-900"
                 }`}
               />
-
               <button
                 type="submit"
-                className={`py-3 rounded-xl transition-all shadow-md transform hover:-translate-y-1 hover:scale-105 ${
-                  darkMode
-                    ? "bg-red-600 hover:bg-red-700 text-white"
-                    : "bg-red-500 hover:bg-red-600 text-white"
-                }`}
+                data-aos="fade-up"
+                data-aos-delay="550"
+                className={`py-3 rounded-xl bg-[#fa9746] hover:bg-[#fa9746] text-white font-semibold transition-transform transform hover:scale-105`}
               >
                 Subscribe
               </button>
@@ -219,13 +223,13 @@ function Footer() {
         </div>
       </div>
 
-      {/* Footer Bottom */}
+      {/* Bottom Copyright */}
       <div
         data-aos="fade-up"
-        data-aos-delay="500"
-        className={`mt-10 sm:mt-12 border-t pt-6 text-center text-sm ${
+        data-aos-delay="600"
+        className={`mt-12 pt-6 border-t text-center text-sm sm:text-base transition-colors duration-300 ${
           darkMode
-            ? "border-gray-700 text-gray-500"
+            ? "border-gray-700 text-gray-400"
             : "border-gray-300 text-gray-600"
         }`}
       >

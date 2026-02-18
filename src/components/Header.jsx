@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useDarkMode } from "../components/DarkModeContext";
+import { FaMoon, FaSun } from "react-icons/fa";
+import luxeNestLogo from "../assets/images/luxeNest_logo.png";
 
 function Navbar() {
   const { darkMode, toggleDarkMode } = useDarkMode();
@@ -23,7 +25,7 @@ function Navbar() {
         const section = document.querySelector(link.href);
         if (section) {
           const rect = section.getBoundingClientRect();
-          if (rect.top <= 80 && rect.bottom >= 80) {
+          if (rect.top <= 100 && rect.bottom >= 100) {
             setActiveSection(link.href);
           }
         }
@@ -48,28 +50,35 @@ function Navbar() {
       {/* NAVBAR */}
       <header
         className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${
-          scrolled ? "bg-black/60 backdrop-blur-sm" : "bg-transparent"
+          scrolled ? "bg-black/70 backdrop-blur-md" : "bg-transparent"
         }`}
       >
-        <nav className="w-full max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-40 py-3 flex items-center justify-between shadow-lg">
+        <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
           {/* LOGO */}
           <a
             href="#hero"
             onClick={(e) => handleNavClick(e, "#hero")}
-            className="text-white text-2xl sm:text-2xl md:text-3xl font-semibold tracking-wide"
+            className="flex items-center"
           >
-            Luxe<span className="font-light">Nest</span>
+            <img
+              src={luxeNestLogo}
+              alt="LuxeNest Logo"
+              className="h-12 w-auto select-none"
+              draggable="false"
+            />
           </a>
 
           {/* DESKTOP MENU */}
-          <ul className="hidden lg:flex items-center gap-4 md:gap-6">
+          <ul className="hidden lg:flex items-center gap-8">
             {navLinks.map((link, i) => (
               <li key={i}>
                 <a
                   href={link.href}
                   onClick={(e) => handleNavClick(e, link.href)}
-                  className={`relative tracking-widest transition-all duration-300 text-white hover:text-[#fa9746] ${
-                    activeSection === link.href ? "text-[#fa9746]" : ""
+                  className={`relative text-sm lg:text-base font-medium transition-colors duration-300 ${
+                    activeSection === link.href
+                      ? "text-[#fa9746]"
+                      : "text-white hover:text-[#fa9746]"
                   }`}
                 >
                   {link.name}
@@ -83,21 +92,21 @@ function Navbar() {
             ))}
           </ul>
 
-          {/* RIGHT ACTIONS */}
-          <div className="flex items-center gap-4 md:gap-6">
-            {/* DARK MODE */}
+          {/* RIGHT SIDE */}
+          <div className="flex items-center gap-5">
+            {/* DARK MODE TOGGLE */}
             <button
               onClick={toggleDarkMode}
-              className="text-white hover:text-[#fa9746] transition text-sm sm:text-base"
+              className="text-white hover:text-[#fa9746] transition duration-300 text-base lg:text-lg cursor-pointer"
             >
-              {darkMode ? "Light" : "Dark"}
+              {darkMode ? <FaSun /> : <FaMoon />}
             </button>
 
-            {/* CONTACT DESKTOP */}
+            {/* CONTACT BUTTON DESKTOP */}
             <a
               href="#contact"
               onClick={(e) => handleNavClick(e, "#contact")}
-              className="hidden lg:inline-block button tracking-widest px-3 py-2 text-sm sm:text-base"
+              className="hidden lg:inline-block px-6 py-2 rounded-xl text-sm lg:text-base font-medium border border-[#fa9746] text-[#fa9746] hover:bg-[#fa9746] hover:text-white transition duration-300"
             >
               Contact
             </a>
@@ -105,7 +114,7 @@ function Navbar() {
             {/* MOBILE MENU ICON */}
             <button
               onClick={() => setMenuOpen(true)}
-              className="lg:hidden text-white text-2xl sm:text-3xl hover:text-[#fa9746] transition-transform hover:scale-110"
+              className="lg:hidden text-white text-2xl hover:text-[#fa9746] transition cursor-pointer"
             >
               ☰
             </button>
@@ -127,37 +136,36 @@ function Navbar() {
           }`}
         />
 
-        {/* RIGHT PANEL */}
+        {/* DRAWER PANEL */}
         <div
           className={`fixed top-0 right-0 h-full w-[85%] max-w-[320px] bg-white dark:bg-black shadow-2xl transition-transform duration-500 ease-in-out ${
             menuOpen ? "translate-x-0" : "translate-x-full"
           }`}
         >
-          {/* HEADER */}
-          <div className="flex items-center justify-between px-5 py-4 border-b border-gray-200 dark:border-gray-700">
-            <span className="text-lg sm:text-xl font-semibold text-black dark:text-white">
+          {/* DRAWER HEADER */}
+          <div className="flex items-center justify-between px-6 py-5 border-b border-gray-200 dark:border-gray-700">
+            <span className="text-lg font-semibold text-black dark:text-white">
               Luxe<span className="font-light">Nest</span>
             </span>
 
-            {/* CLOSE BUTTON */}
             <button
               onClick={() => setMenuOpen(false)}
-              className="text-2xl sm:text-3xl font-bold text-black dark:text-white hover:text-[#fa9746] transition"
+              className="text-2xl font-bold text-black dark:text-white hover:text-[#fa9746] transition cursor-pointer"
             >
               ✕
             </button>
           </div>
 
-          {/* MENU LINKS */}
-          <div className="flex flex-col gap-4 sm:gap-5 px-6 py-6 text-left">
+          {/* DRAWER LINKS */}
+          <div className="flex flex-col gap-6 px-6 py-8">
             {navLinks.map((link, i) => (
               <a
                 key={i}
                 href={link.href}
                 onClick={(e) => handleNavClick(e, link.href)}
-                className={`text-base sm:text-lg tracking-widest transition-all duration-300 ${
+                className={`text-base font-medium transition duration-300 ${
                   darkMode ? "text-gray-200" : "text-gray-700"
-                } hover:text-[#fa9746] hover:translate-x-2`}
+                } hover:text-[#fa9746]`}
               >
                 {link.name}
               </a>
@@ -167,7 +175,7 @@ function Navbar() {
             <a
               href="#contact"
               onClick={(e) => handleNavClick(e, "#contact")}
-              className="mt-6 border border-[#fa9746] text-[#fa9746] hover:bg-[#fa9746] hover:text-white px-6 py-2 rounded tracking-widest text-center text-sm sm:text-base"
+              className="mt-6 px-6 py-3 rounded-xl text-sm font-medium border border-[#fa9746] text-[#fa9746] hover:bg-[#fa9746] hover:text-white transition duration-300 text-center"
             >
               Contact
             </a>

@@ -48,32 +48,23 @@ function Properties() {
   return (
     <section
       id="properties"
-      className={`w-full py-16 sm:py-20 md:py-24 lg:py-32 overflow-x-hidden ${
+      className={`padding-bottom-1 w-full overflow-x-hidden ${
         darkMode ? "bg-black" : "bg-gray-100"
       }`}
     >
       {/* MAIN CONTAINER */}
       <div className="max-w-[1920px] mx-auto px-4 sm:px-6 md:px-10 lg:px-40">
         {/* HEADER */}
-        <div className="mb-16">
-          <h1
-            data-aos="zoom-in"
-            className={`tracking-[0.35em] text-sm sm:text-base md:text-lg span_line ${
-              darkMode ? "text-red-600" : "text-green-800"
-            }`}
-          >
-            FEATURED PROPERTIES
-          </h1>
-
-          <Title title="Homes defined by space" />
+        <div className="mb-12 sm:mb-16 text-center lg:text-left">
+          <Title title="Homes defined by space" subtitle="Your Expectation!" />
         </div>
 
         {/* PROPERTIES LIST */}
-        <div className="flex flex-col gap-20 sm:gap-24 lg:gap-32">
+        <div className="flex flex-col gap-16 sm:gap-20 lg:gap-28">
           {properties.map((property, index) => (
             <div
               key={index}
-              className="group grid grid-cols-1 lg:grid-cols-12 items-center gap-10 sm:gap-12 lg:gap-20"
+              className="group grid grid-cols-1 lg:grid-cols-12 items-center gap-8 sm:gap-12 lg:gap-20"
             >
               {/* IMAGE */}
               <div
@@ -86,7 +77,7 @@ function Properties() {
                   <img
                     src={property.img}
                     alt={property.title}
-                    className="w-full h-[280px] sm:h-[380px] md:h-[450px] lg:h-[520px] object-cover transition-transform duration-[1200ms] group-hover:scale-105"
+                    className="w-full h-[260px] sm:h-[360px] md:h-[420px] lg:h-[500px] object-cover transition-transform duration-[1200ms] group-hover:scale-105"
                   />
                 </div>
               </div>
@@ -95,24 +86,27 @@ function Properties() {
               <div
                 data-aos={index % 2 === 0 ? "fade-left" : "fade-right"}
                 data-aos-delay="120"
-                className={`lg:col-span-5 flex flex-col gap-6 sm:gap-8 ${
+                className={`lg:col-span-5 flex flex-col gap-6 ${
                   index % 2 !== 0 ? "lg:order-1" : ""
                 }`}
               >
+                {/* Location */}
                 <span
-                  className={`text-sm sm:text-base md:text-lg tracking-widest uppercase ${
+                  className={`text-sm tracking-widest uppercase ${
                     darkMode ? "text-gray-400" : "text-gray-500"
                   }`}
                 >
                   {property.location}
                 </span>
 
-                <h3 className="section_sub_title text-lg sm:text-xl md:text-2xl text-[#fa9746]">
+                {/* Title */}
+                <h3 className="section_sub_title text-xl sm:text-2xl text-[#fa9746]">
                   {property.title}
                 </h3>
 
+                {/* Description */}
                 <p
-                  className={`leading-relaxed text-sm sm:text-base md:text-lg ${
+                  className={`text-base leading-7 ${
                     darkMode ? "text-gray-400" : "text-gray-600"
                   }`}
                 >
@@ -120,8 +114,9 @@ function Properties() {
                   modern comfort—crafted for elevated living in Las Vegas.
                 </p>
 
-                <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-10 mt-6">
-                  <span className="text-2xl font-semibold text-red-600">
+                {/* Bottom Row */}
+                <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-10 mt-4">
+                  <span className="text-xl sm:text-2xl font-semibold text-red-600">
                     {property.price}
                   </span>
 

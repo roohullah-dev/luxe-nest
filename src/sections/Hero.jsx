@@ -36,7 +36,7 @@ function Hero() {
 
       {/* Content */}
       <motion.div
-        className="relative z-10 text-center flex flex-col items-center px-4 sm:px-6 md:px-10 max-w-3xl"
+        className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center"
         initial={{ opacity: 0, y: 50 }}
         animate={controls}
         variants={{
@@ -54,9 +54,9 @@ function Hero() {
               transition: { delay: 0.3, duration: 0.8 },
             },
           }}
-          className={`uppercase span_line tracking-[0.35em] mb-4 ${
+          className={`uppercase text-sm font-medium tracking-wide ${
             darkMode ? "text-gray-400" : "text-gray-200"
-          } text-xs sm:text-sm md:text-base`}
+          }`}
         >
           Luxury Real Estate
         </motion.span>
@@ -72,7 +72,7 @@ function Hero() {
               transition: { delay: 0.5, duration: 1 },
             },
           }}
-          className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight bg-clip-text text-transparent"
+          className="mt-4 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight bg-clip-text text-transparent"
           style={{
             backgroundImage: darkMode
               ? "linear-gradient(90deg, #ff5f6d, #ffc371, #ff5f6d)"
@@ -81,8 +81,8 @@ function Hero() {
             animation: "gradientMove 4s linear infinite",
           }}
         >
-          Live Beyond Luxury
-          <br /> Your Dream Here
+          Live Beyond Luxury <br className="hidden sm:block" />
+          Your Dream Here
         </motion.h1>
 
         {/* Paragraph */}
@@ -96,7 +96,7 @@ function Hero() {
               transition: { delay: 0.7, duration: 1 },
             },
           }}
-          className={`mt-6 text-base sm:text-lg md:text-xl max-w-xl ${
+          className={`mt-6 max-w-2xl mx-auto text-base sm:text-lg leading-relaxed ${
             darkMode ? "text-gray-300" : "text-gray-100"
           }`}
         >
@@ -115,19 +115,20 @@ function Hero() {
               transition: { delay: 0.9, duration: 1 },
             },
           }}
-          className="mt-8 flex flex-col sm:flex-row flex-wrap justify-center gap-4 sm:gap-6"
+          className="mt-10 flex flex-col sm:flex-row justify-center gap-4"
         >
           <a
             href="#properties"
-            className="secondary_button lg:inline-block tracking-widest w-full sm:w-auto text-center"
+            className="px-6 py-3 rounded-xl text-sm sm:text-base font-medium border border-white text-white hover:bg-white hover:text-black transition duration-300 w-full sm:w-auto"
           >
             Browse Properties
           </a>
+
           <a
             href="https://example.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="button lg:inline-block tracking-widest w-full sm:w-auto text-center"
+            className="px-6 py-3 rounded-xl text-sm sm:text-base font-medium bg-[#fa9746] text-white hover:opacity-90 transition duration-300 w-full sm:w-auto"
           >
             Contact Us
           </a>
@@ -154,7 +155,7 @@ function Hero() {
         ></motion.span>
       ))}
 
-      {/* Gradient Animation Keyframes */}
+      {/* Gradient Animation */}
       <style>{`
         @keyframes gradientMove {
           0% { background-position: 0% 50%; }

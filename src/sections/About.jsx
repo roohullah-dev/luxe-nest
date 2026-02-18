@@ -8,9 +8,9 @@ import "aos/dist/aos.css";
 function About() {
   useEffect(() => {
     AOS.init({
-      offset: 200,
+      offset: 120,
       duration: 800,
-      easing: "ease-in-sine",
+      easing: "ease-in-out",
       delay: 100,
     });
   }, []);
@@ -20,42 +20,47 @@ function About() {
   return (
     <section
       id="about"
-      className={`py-16 ${
+      className={`py-16 md:py-20 ${
         darkMode ? "bg-black text-gray-200" : "bg-white text-gray-800"
-      } w-full m-auto px-4 sm:px-6 md:px-10 lg:px-40 grid lg:grid-cols-2 grid-cols-1 gap-10 justify-center items-center`}
+      }`}
     >
-      {/* IMAGE */}
-      <div className="flex justify-center lg:justify-start">
-        <img
-          src={aboutimg}
-          data-aos="zoom-in"
-          className="rounded-2xl w-full sm:w-[350px] md:w-[450px] lg:w-[500px] h-auto lg:h-[600px] object-cover"
-          alt="About Image"
-        />
-      </div>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-12 items-center">
+        {/* IMAGE */}
+        <div className="flex justify-center lg:justify-start">
+          <img
+            src={aboutimg}
+            data-aos="zoom-in"
+            className="rounded-2xl w-full max-w-md lg:max-w-lg h-auto lg:h-[550px] object-cover"
+            alt="About Image"
+          />
+        </div>
 
-      {/* CONTENT */}
-      <div className="flex flex-col justify-center items-start gap-6 sm:gap-8 text-center lg:text-left">
-        <h1
-          data-aos="zoom-in"
-          className="span_line tracking-[0.35em] text-sm sm:text-base md:text-lg"
-        >
-          WHO WE ARE
-        </h1>
-        <Title title="About us" />
-        <p
-          data-aos="zoom-in"
-          className={`text-base sm:text-lg md:text-xl text-justify font-light ${
-            darkMode ? "text-white" : "text-black"
-          }`}
-        >
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Assumenda
-          aliquid nemo quod culpa placeat eos. Esse impedit quam distinctio
-          obcaecati unde nemo doloremque minus laboriosam?
-        </p>
-        <button className="secondary_button lg:inline-block tracking-widest w-full sm:w-auto text-center">
-          Read More
-        </button>
+        {/* CONTENT */}
+        <div className="flex flex-col gap-6 text-center lg:text-left">
+          {/* Title Component */}
+          <div className="text-center lg:text-left">
+            <Title title="About Us" subtitle="Who We Are" />
+          </div>
+
+          {/* Paragraph */}
+          <p
+            data-aos="zoom-in"
+            className={`text-base sm:text-lg leading-relaxed max-w-xl mx-auto lg:mx-0 ${
+              darkMode ? "text-gray-300" : "text-gray-600"
+            }`}
+          >
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda
+            aliquid nemo quod culpa placeat eos. Esse impedit quam distinctio
+            obcaecati unde nemo doloremque minus laboriosam?
+          </p>
+
+          {/* Button */}
+          <div className="flex justify-center lg:justify-start">
+            <button className="px-6 py-3 rounded-xl text-sm sm:text-base font-medium border border-[#fa9746] text-[#fa9746] hover:bg-[#fa9746] hover:text-white transition duration-300">
+              Read More
+            </button>
+          </div>
+        </div>
       </div>
     </section>
   );

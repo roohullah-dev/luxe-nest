@@ -11,10 +11,11 @@ import area3 from "../assets/images/area3.jpg";
 function PopularAreas() {
   useEffect(() => {
     AOS.init({
-      offset: 150,
+      offset: 120,
       duration: 800,
       easing: "ease-out",
       delay: 80,
+      once: true,
     });
   }, []);
 
@@ -44,69 +45,66 @@ function PopularAreas() {
   return (
     <section
       id="popular-areas"
-      className={`${darkMode ? "dark bg-black" : "light bg-transparent"} w-full m-auto lg:px-40 md:px-10 px-6 py-20 sm:py-32`}
+      className={`py-16 md:py-20 ${
+        darkMode ? "bg-black text-gray-200" : "bg-white text-gray-800"
+      }`}
     >
-      {/* Header */}
-      <div className="inline-block mb-12 sm:mb-16 text-center lg:text-left">
-        <h1
-          data-aos="zoom-in"
-          className="span_line tracking-[0.35em] text-sm sm:text-base"
-        >
-          WHO WE ARE
-        </h1>
-        <Title title="Popular Areas" />
-      </div>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* SECTION HEADER */}
+        <div className="mb-12 text-center lg:text-left">
+          <Title title="Popular Areas" subtitle="Your Expectation!" />
+        </div>
 
-      {/* Advanced Cards */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 sm:gap-12 lg:gap-20">
-        {areas.map((area, index) => (
-          <div
-            key={index}
-            data-aos="fade-up"
-            data-aos-delay={index * 120}
-            className="relative group"
-          >
-            {/* Image block */}
-            <div className="relative z-10 w-full h-[220px] sm:h-[240px] md:h-[260px] rounded-2xl overflow-hidden">
-              <img
-                src={area.img}
-                alt={area.title}
-                className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
-              />
-            </div>
-
-            {/* Content card */}
+        {/* GRID */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+          {areas.map((area, index) => (
             <div
-              className={`relative -mt-12 sm:-mt-14 md:-mt-16 p-6 sm:p-8 md:p-10 rounded-3xl
-                ${darkMode ? "bg-gray-900" : "bg-white"}
-                shadow-[0_30px_80px_rgba(0,0,0,0.12)]
-                transition-all duration-500
-                group-hover:-translate-y-2`}
+              key={index}
+              data-aos="fade-up"
+              data-aos-delay={index * 120}
+              className="group"
             >
-              <h3 className="section_sub_title text-sm sm:text-base md:text-lg dark:text-[#fa9746]">
-                {area.title}
-              </h3>
+              {/* IMAGE */}
+              <div className="relative w-full h-56 rounded-2xl overflow-hidden">
+                <img
+                  src={area.img}
+                  alt={area.title}
+                  className="w-full h-full object-cover transition duration-700 group-hover:scale-105"
+                />
+              </div>
 
-              <p
-                className={`mt-2 text-xs sm:text-sm md:text-base leading-relaxed ${
-                  darkMode ? "text-white" : "text-black"
+              {/* CARD */}
+              <div
+                className={`relative -mt-10 p-6 rounded-2xl shadow-md transition duration-300 group-hover:-translate-y-2 ${
+                  darkMode ? "bg-gray-900" : "bg-white"
                 }`}
               >
-                {area.description}
-              </p>
+                {/* TITLE */}
+                <h3 className="text-lg font-semibold text-[#fa9746] mb-2">
+                  {area.title}
+                </h3>
 
-              <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mt-6 sm:mt-8 gap-2 sm:gap-0">
-                <span className="text-xs sm:text-sm tracking-wide text-gray-400">
-                  {area.listings}
-                </span>
+                {/* DESCRIPTION */}
+                <p
+                  className={`text-sm sm:text-base leading-relaxed ${
+                    darkMode ? "text-gray-300" : "text-gray-600"
+                  }`}
+                >
+                  {area.description}
+                </p>
 
-                <span className="text-sm font-medium text-[#fa9746] hover:text-red-600 transition-all cursor-pointer">
-                  Explore →
-                </span>
+                {/* FOOTER */}
+                <div className="flex items-center justify-between mt-6">
+                  <span className="text-sm text-gray-400">{area.listings}</span>
+
+                  <span className="text-sm font-medium text-[#fa9746] hover:opacity-80 transition cursor-pointer">
+                    Explore →
+                  </span>
+                </div>
               </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </section>
   );

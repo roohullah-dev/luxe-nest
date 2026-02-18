@@ -42,21 +42,18 @@ function ContactForm() {
   return (
     <section
       id="contact"
-      className={`py-16 sm:py-20 md:py-24 lg:py-32 overflow-x-hidden ${
+      className={`padding-bottom-1 overflow-x-hidden ${
         darkMode ? "bg-black text-gray-200" : "bg-[#f8f7f5] text-gray-900"
       }`}
     >
       <div className="max-w-[1920px] mx-auto px-4 sm:px-6 md:px-10 lg:px-40">
         {/* HEADER */}
-        <div className="mb-16 text-center lg:text-left">
-          <h1 className="span_line tracking-[0.35em] text-sm sm:text-base md:text-lg">
-            WHO WE ARE
-          </h1>
-          <Title title="Contact us!" />
+        <div className="mb-12 sm:mb-16 text-center lg:text-left">
+          <Title title="Contact us" subtitle="Get Into Touch" />
         </div>
 
         {/* GRID */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16">
           {/* FORM CARD */}
           <div
             className={`rounded-3xl shadow-xl p-6 sm:p-8 lg:p-10 border w-full ${
@@ -66,7 +63,7 @@ function ContactForm() {
             }`}
           >
             <p
-              className={`mb-6 text-sm sm:text-base ${
+              className={`mb-6 text-base leading-7 ${
                 darkMode ? "text-gray-400" : "text-gray-600"
               }`}
             >
@@ -74,10 +71,7 @@ function ContactForm() {
               property.
             </p>
 
-            <form
-              className="flex flex-col gap-4 sm:gap-6"
-              onSubmit={handleSubmit}
-            >
+            <form className="flex flex-col gap-5" onSubmit={handleSubmit}>
               {/* NAME */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <input
@@ -87,7 +81,7 @@ function ContactForm() {
                   onChange={handleChange}
                   placeholder="First Name"
                   required
-                  className="w-full p-4 rounded-xl border focus:outline-none focus:ring-2 focus:ring-[#fa9746]"
+                  className="w-full p-4 text-sm rounded-xl border focus:outline-none focus:ring-2 focus:ring-[#fa9746]"
                 />
                 <input
                   type="text"
@@ -96,7 +90,7 @@ function ContactForm() {
                   onChange={handleChange}
                   placeholder="Last Name"
                   required
-                  className="w-full p-4 rounded-xl border focus:outline-none focus:ring-2 focus:ring-[#fa9746]"
+                  className="w-full p-4 text-sm rounded-xl border focus:outline-none focus:ring-2 focus:ring-[#fa9746]"
                 />
               </div>
 
@@ -109,7 +103,7 @@ function ContactForm() {
                   onChange={handleChange}
                   placeholder="Email"
                   required
-                  className="w-full p-4 rounded-xl border focus:outline-none focus:ring-2 focus:ring-[#fa9746]"
+                  className="w-full p-4 text-sm rounded-xl border focus:outline-none focus:ring-2 focus:ring-[#fa9746]"
                 />
                 <input
                   type="tel"
@@ -118,7 +112,7 @@ function ContactForm() {
                   onChange={handleChange}
                   placeholder="Phone"
                   required
-                  className="w-full p-4 rounded-xl border focus:outline-none focus:ring-2 focus:ring-[#fa9746]"
+                  className="w-full p-4 text-sm rounded-xl border focus:outline-none focus:ring-2 focus:ring-[#fa9746]"
                 />
               </div>
 
@@ -129,7 +123,7 @@ function ContactForm() {
                   value={formData.inquiryType}
                   onChange={handleChange}
                   required
-                  className="w-full p-4 rounded-xl border focus:outline-none focus:ring-2 focus:ring-[#fa9746]"
+                  className="w-full p-4 text-sm rounded-xl border focus:outline-none focus:ring-2 focus:ring-[#fa9746]"
                 >
                   <option value="">Inquiry Type</option>
                   <option>Buy Property</option>
@@ -142,7 +136,7 @@ function ContactForm() {
                   value={formData.propertyType}
                   onChange={handleChange}
                   required
-                  className="w-full p-4 rounded-xl border focus:outline-none focus:ring-2 focus:ring-[#fa9746]"
+                  className="w-full p-4 text-sm rounded-xl border focus:outline-none focus:ring-2 focus:ring-[#fa9746]"
                 >
                   <option value="">Property Type</option>
                   <option>Apartment</option>
@@ -158,12 +152,12 @@ function ContactForm() {
                 onChange={handleChange}
                 rows="4"
                 placeholder="Additional Requirements"
-                className="w-full p-4 rounded-xl border focus:outline-none focus:ring-2 focus:ring-[#fa9746]"
+                className="w-full p-4 text-sm rounded-xl border focus:outline-none focus:ring-2 focus:ring-[#fa9746]"
               />
 
               <button
                 type="submit"
-                className="w-full sm:w-auto bg-[#fa9746] text-white py-4 px-8 rounded-xl font-semibold"
+                className="w-full sm:w-auto bg-[#fa9746] text-white py-3 px-8 rounded-xl font-semibold text-sm tracking-wide"
               >
                 Submit Inquiry
               </button>
@@ -179,15 +173,15 @@ function ContactForm() {
                   : "bg-white border-gray-200"
               }`}
             >
-              <div className="flex items-center gap-3 mb-4">
+              <div className="flex items-center gap-3 mb-4 text-sm">
                 <FaHome className="text-[#fa9746]" />
                 <p>123 Luxury Avenue, Estate City</p>
               </div>
-              <div className="flex items-center gap-3 mb-4">
+              <div className="flex items-center gap-3 mb-4 text-sm">
                 <FaPhoneAlt className="text-[#fa9746]" />
                 <p>+123 456 7890</p>
               </div>
-              <div className="flex items-center gap-3">
+              <div className="flex items-center gap-3 text-sm">
                 <FaEnvelope className="text-[#fa9746]" />
                 <p>contact@luxenest.com</p>
               </div>
@@ -197,7 +191,7 @@ function ContactForm() {
               <iframe
                 title="Property Location"
                 src="https://www.google.com/maps/embed?pb=!1m18..."
-                className="w-full h-[250px] sm:h-[300px] md:h-[350px] lg:h-[400px]"
+                className="w-full h-[260px] sm:h-[320px] md:h-[360px] lg:h-[400px]"
                 style={{ border: 0 }}
                 loading="lazy"
               />

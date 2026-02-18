@@ -40,7 +40,7 @@ function Clients() {
   return (
     <section
       id="clients"
-      className={`w-full py-24 px-6 sm:px-10 lg:px-36 ${
+      className={`padding-bottom-1 w-full px-6 sm:px-10 lg:px-36 ${
         darkMode ? "bg-black" : "bg-gray-100"
       }`}
     >
@@ -50,10 +50,7 @@ function Clients() {
           className="order-1 lg:order-1 lg:sticky lg:top-32 top-auto "
           data-aos="fade-up"
         >
-          <h1 data-aos="zoom-in" className="span_line tracking-[0.35em]">
-            CLIENTS EXPERIENCE
-          </h1>
-          <Title title="Real stories" />
+          <Title title="Real Stories" subtitle="CLIENTS EXPERIENCE!" />
           <p
             className="mt-6 sm:mt-10 text-base sm:text-lg lg:text-xl text-gray-600 dark:text-gray-400 leading-relaxed max-w-xl"
             data-aos="fade-up"
