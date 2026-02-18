@@ -17,9 +17,9 @@ function Hero() {
     <section
       ref={ref}
       id="hero"
-      className={`relative w-full min-h-screen flex items-center justify-center overflow-hidden ${
-        darkMode ? "bg-black" : "bg-gray-100"
-      }`}
+      className={`relative w-full min-h-screen flex items-start sm:items-center justify-center pt-32 sm:pt-0 overflow-hidden 
+
+        ${darkMode ? "bg-black" : "bg-gray-100"}`}
       style={{
         backgroundImage: `url(${heroImg})`,
         backgroundSize: "cover",

@@ -49,7 +49,8 @@ function Footer() {
               modern apartments, villas, and commercial properties.
             </p>
 
-            <div className="flex gap-4 mt-3">
+            {/* <div className="flex gap-4 mt-3"> */}
+            <div className="flex flex-wrap gap-4 mt-3">
               {[FaFacebookF, FaInstagram, FaLinkedinIn, FaTwitter].map(
                 (Icon, i) => (
                   <a
@@ -102,7 +103,7 @@ function Footer() {
           <div data-aos="fade-up" data-aos-delay="300">
             <h3 className="text-xl sm:text-2xl font-semibold mb-4">Contact</h3>
 
-            <div className="flex flex-col gap-3">
+            {/* <div className="flex flex-col gap-3">
               <a
                 href="mailto:contact@luxenest.com"
                 className={`flex items-center gap-3 p-3 rounded-lg transition hover:bg-[#fa9746] hover:text-white ${
@@ -130,6 +131,42 @@ function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className={`flex items-center gap-3 p-3 rounded-lg transition hover:bg-[#fa9746] hover:text-white ${
+                  darkMode
+                    ? "bg-[#222222] text-gray-400"
+                    : "bg-gray-100 text-gray-700"
+                }`}
+              >
+                <FaMapMarkerAlt /> 123 Luxury Avenue, Estate City
+              </a>
+            </div> */}
+            <div className="flex flex-col gap-3">
+              <a
+                href="mailto:contact@luxenest.com"
+                className={`flex items-center gap-3 p-3 rounded-lg transition hover:bg-[#fa9746] hover:text-white break-words ${
+                  darkMode
+                    ? "bg-[#222222] text-gray-400"
+                    : "bg-gray-100 text-gray-700"
+                }`}
+              >
+                <FaEnvelope /> contact@luxenest.com
+              </a>
+
+              <a
+                href="tel:+1234567890"
+                className={`flex items-center gap-3 p-3 rounded-lg transition hover:bg-[#fa9746] hover:text-white break-words ${
+                  darkMode
+                    ? "bg-[#222222] text-gray-400"
+                    : "bg-gray-100 text-gray-700"
+                }`}
+              >
+                <FaPhone /> +123 456 7890
+              </a>
+
+              <a
+                href="https://www.google.com/maps?q=123+Luxury+Avenue+Estate+City"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`flex items-center gap-3 p-3 rounded-lg transition hover:bg-[#fa9746] hover:text-white break-words ${
                   darkMode
                     ? "bg-[#222222] text-gray-400"
                     : "bg-gray-100 text-gray-700"
