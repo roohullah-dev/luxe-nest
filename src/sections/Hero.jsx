@@ -100,8 +100,10 @@ function Hero() {
             darkMode ? "text-gray-300" : "text-gray-100"
           }`}
         >
-          Explore premium villas, apartments, and commercial properties designed
-          for modern luxury living.
+          Experience elevated living with our exclusive collection of luxury
+          villas, modern apartments, and premium commercial spaces —
+          thoughtfully designed to deliver elegance, comfort, and lasting value
+          in every detail.
         </motion.p>
 
         {/* CTA Buttons */}
