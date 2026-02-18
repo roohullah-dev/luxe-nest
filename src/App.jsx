@@ -21,7 +21,7 @@ function App() {
       <Properties />
       <Clients />
       <Contact />
-      <Footer />
+      {/* <Footer /> */}
     </DarkModeProvider>
   );
 }
