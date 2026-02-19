@@ -56,7 +56,7 @@ function About() {
 
           {/* Button */}
           <div className="flex justify-center lg:justify-start">
-            <button className="px-6 py-3 rounded-xl text-sm sm:text-base font-medium border border-[#fa9746] text-[#fa9746] hover:bg-[#fa9746] hover:text-white transition duration-300">
+            <button className="button px-6 py-3 rounded-xl text-sm sm:text-base font-medium border transition duration-300">
               Read More
             </button>
           </div>

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import luxeNestLogo from "../assets/images/luxeNest_logo.png";
 import {
   FaFacebookF,
   FaInstagram,
@@ -29,16 +30,28 @@ function Footer() {
     >
       {/* Main Container aligned with Header */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-4 gap-10 sm:gap-16">
+        <div className="grid grid-cols-1 lg:grid-cols-4 gap-10 sm:gap-16 text-center lg:text-left">
           {/* Left Section */}
           <div
             data-aos="fade-up"
             data-aos-delay="100"
-            className="flex flex-col gap-5"
+            className="flex flex-col items-center lg:items-start gap-5"
           >
-            <h2 className="text-3xl sm:text-4xl font-serif font-bold">
+            {/* <h2 className="text-3xl sm:text-4xl font-serif font-bold">
               LV<span className="font-light">Estates</span>
-            </h2>
+            </h2> */}
+            <a
+              href="#hero"
+              onClick={(e) => handleNavClick(e, "#hero")}
+              className="flex items-center"
+            >
+              <img
+                src={luxeNestLogo}
+                alt="LuxeNest Logo"
+                className="h-12 w-auto select-none"
+                draggable="false"
+              />
+            </a>
 
             <p
               className={`text-sm sm:text-base leading-relaxed ${
@@ -49,8 +62,7 @@ function Footer() {
               modern apartments, villas, and commercial properties.
             </p>
 
-            {/* <div className="flex gap-4 mt-3"> */}
-            <div className="flex flex-wrap gap-4 mt-3">
+            <div className="flex flex-wrap gap-4 justify-center lg:justify-start mt-3">
               {[FaFacebookF, FaInstagram, FaLinkedinIn, FaTwitter].map(
                 (Icon, i) => (
                   <a
@@ -72,7 +84,11 @@ function Footer() {
           </div>
 
           {/* Quick Links */}
-          <div data-aos="fade-right" data-aos-delay="200">
+          <div
+            data-aos="fade-right"
+            data-aos-delay="200"
+            className="flex flex-col items-center lg:items-start"
+          >
             <h3 className="text-xl sm:text-2xl font-semibold mb-4">
               Quick Links
             </h3>
@@ -100,45 +116,13 @@ function Footer() {
           </div>
 
           {/* Contact */}
-          <div data-aos="fade-up" data-aos-delay="300">
+          <div
+            data-aos="fade-up"
+            data-aos-delay="300"
+            className="flex flex-col items-center lg:items-start"
+          >
             <h3 className="text-xl sm:text-2xl font-semibold mb-4">Contact</h3>
 
-            {/* <div className="flex flex-col gap-3">
-              <a
-                href="mailto:contact@luxenest.com"
-                className={`flex items-center gap-3 p-3 rounded-lg transition hover:bg-[#fa9746] hover:text-white ${
-                  darkMode
-                    ? "bg-[#222222] text-gray-400"
-                    : "bg-gray-100 text-gray-700"
-                }`}
-              >
-                <FaEnvelope /> contact@luxenest.com
-              </a>
-
-              <a
-                href="tel:+1234567890"
-                className={`flex items-center gap-3 p-3 rounded-lg transition hover:bg-[#fa9746] hover:text-white ${
-                  darkMode
-                    ? "bg-[#222222] text-gray-400"
-                    : "bg-gray-100 text-gray-700"
-                }`}
-              >
-                <FaPhone /> +123 456 7890
-              </a>
-
-              <a
-                href="https://www.google.com/maps?q=123+Luxury+Avenue+Estate+City"
-                target="_blank"
-                rel="noopener noreferrer"
-                className={`flex items-center gap-3 p-3 rounded-lg transition hover:bg-[#fa9746] hover:text-white ${
-                  darkMode
-                    ? "bg-[#222222] text-gray-400"
-                    : "bg-gray-100 text-gray-700"
-                }`}
-              >
-                <FaMapMarkerAlt /> 123 Luxury Avenue, Estate City
-              </a>
-            </div> */}
             <div className="flex flex-col gap-3">
               <a
                 href="mailto:contact@luxenest.com"
@@ -178,7 +162,11 @@ function Footer() {
           </div>
 
           {/* Newsletter */}
-          <div data-aos="fade-left" data-aos-delay="400">
+          <div
+            data-aos="fade-left"
+            data-aos-delay="400"
+            className="flex flex-col items-center lg:items-start"
+          >
             <h3 className="text-xl sm:text-2xl font-semibold mb-4">
               Newsletter
             </h3>
@@ -191,7 +179,10 @@ function Footer() {
               Subscribe to get the latest property listings and updates.
             </p>
 
-            <form onSubmit={handleSubscribe} className="flex flex-col gap-3">
+            <form
+              onSubmit={handleSubscribe}
+              className="flex flex-col gap-3 w-full"
+            >
               <input
                 type="email"
                 placeholder="Your email address"
@@ -207,7 +198,7 @@ function Footer() {
 
               <button
                 type="submit"
-                className="py-3 rounded-xl bg-[#fa9746] text-white font-semibold transition-transform hover:scale-105"
+                className="py-3 rounded-xl bg-[#fa9746] text-white font-semibold transition-transform hover:scale-105 w-full sm:w-auto"
               >
                 Subscribe
               </button>
@@ -218,8 +209,8 @@ function Footer() {
 
       {/* Bottom */}
       <div
-        data-aos="fade-up"
-        data-aos-delay="500"
+        // data-aos="fade-up"
+        // data-aos-delay="500"
         className={`mt-12 pt-6 border-t text-center text-sm transition ${
           darkMode
             ? "border-gray-700 text-gray-400"

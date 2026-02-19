@@ -72,9 +72,9 @@ body {
 
 .button:hover {
   background: var(--primary);
-  color: black;
+  color: white;
   animation-duration: 300;
-  cursor: pointer;
+  cursor: pointer !important;
 }
 
 .secondary_button {
@@ -82,7 +82,7 @@ body {
   font-size: 18px;
   background: var(--primary);
   border: 1px solid var(--primary);
-  color: black;
+  color: white;
   padding: 0.5rem 1.5rem;
   transition: all 0.4s ease-in-out;
   border-radius: 0.5rem;
@@ -90,8 +90,8 @@ body {
 
 .secondary_button:hover {
   animation-duration: 300;
-  background: transparent;
-  color: var(--primary);
+  background: transparent !important;
+  color: var(--primary) !important;
   cursor: pointer;
 }
 

@@ -121,7 +121,7 @@ function Hero() {
         >
           <a
             href="#properties"
-            className="px-6 py-3 rounded-xl text-sm sm:text-base font-medium border border-white text-white hover:bg-white hover:text-black transition duration-300 w-full sm:w-auto"
+            className="secondary_button px-6 py-3 rounded-xl text-sm sm:text-base font-medium border transition duration-300 w-full sm:w-auto"
           >
             Browse Properties
           </a>
@@ -130,7 +130,7 @@ function Hero() {
             href="https://example.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="px-6 py-3 rounded-xl text-sm sm:text-base font-medium bg-[#fa9746] text-white hover:opacity-90 transition duration-300 w-full sm:w-auto"
+            className=" button px-6 py-3 rounded-xl text-sm sm:text-base font-medium hover:opacity-90 transition duration-300 w-full sm:w-auto"
           >
             Contact Us
           </a>

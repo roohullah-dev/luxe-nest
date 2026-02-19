@@ -157,7 +157,7 @@ function ContactForm() {
 
               <button
                 type="submit"
-                className="w-full sm:w-auto bg-[#fa9746] text-white py-3 px-8 rounded-xl font-semibold text-sm tracking-wide"
+                className="secondary_button w-full sm:w-auto py-3 px-8 rounded-xl font-semibold text-sm tracking-wide"
               >
                 Submit Inquiry
               </button>

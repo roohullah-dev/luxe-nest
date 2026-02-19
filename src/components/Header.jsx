@@ -138,16 +138,24 @@ function Navbar() {
 
         {/* DRAWER PANEL */}
         <div
-          className={`fixed top-0 right-0 h-full w-[85%] max-w-[320px] bg-white dark:bg-black shadow-2xl transition-transform duration-500 ease-in-out ${
+          className={`fixed top-0 right-0 h-8/12 w-[85%] max-w-[320px] bg-white dark:bg-black/80 text-center shadow-2xl transition-transform duration-500 ease-in-out rounded-2xl ${
             menuOpen ? "translate-x-0" : "translate-x-full"
           }`}
         >
           {/* DRAWER HEADER */}
           <div className="flex items-center justify-between px-6 py-5 border-b border-gray-200 dark:border-gray-700">
-            <span className="text-lg font-semibold text-black dark:text-white">
-              Luxe<span className="font-light">Nest</span>
-            </span>
-
+            <a
+              href="#hero"
+              onClick={(e) => handleNavClick(e, "#hero")}
+              className="flex items-center"
+            >
+              <img
+                src={luxeNestLogo}
+                alt="LuxeNest Logo"
+                className="h-12 w-auto select-none"
+                draggable="false"
+              />
+            </a>
             <button
               onClick={() => setMenuOpen(false)}
               className="text-2xl font-bold text-black dark:text-white hover:text-[#fa9746] transition cursor-pointer"
@@ -164,7 +172,7 @@ function Navbar() {
                 href={link.href}
                 onClick={(e) => handleNavClick(e, link.href)}
                 className={`text-base font-medium transition duration-300 ${
-                  darkMode ? "text-gray-200" : "text-gray-700"
+                  darkMode ? "text-white" : "text-white"
                 } hover:text-[#fa9746]`}
               >
                 {link.name}

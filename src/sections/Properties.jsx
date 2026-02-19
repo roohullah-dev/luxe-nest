@@ -53,7 +53,7 @@ function Properties() {
       }`}
     >
       {/* MAIN CONTAINER */}
-      <div className="max-w-[1920px] mx-auto px-4 sm:px-6 md:px-10 lg:px-40">
+      <div className="max-w-[1920px] mx-auto px-4 sm:px-6 md:px-10 lg:px-40 pt-14">
         {/* HEADER */}
         <div className="mb-12 sm:mb-16 text-center lg:text-left">
           <Title title="Homes defined by space" subtitle="Your Expectation!" />

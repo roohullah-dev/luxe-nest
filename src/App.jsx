@@ -33,6 +33,7 @@ function App() {
       <Properties />
       <Clients />
       <Contact />
+
       <Footer />
     </DarkModeProvider>
   );

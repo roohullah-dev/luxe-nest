@@ -44,7 +44,8 @@ function Clients() {
         darkMode ? "bg-black" : "bg-gray-100"
       }`}
     >
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start  lg:px-4 px-10 mb-28">
+      {/* <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start  lg:px-4 px-10 mb-28"> */}
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start px-0 sm:px-6 lg:px-4 mb-28">
         {/* LEFT SIDE – Editorial Content */}
         <div
           className="order-1 lg:order-1 lg:sticky lg:top-32 top-auto "
@@ -72,8 +73,13 @@ function Clients() {
               className="group"
             >
               {/* Quote */}
-              <p
+              {/* <p
                 className={`text-lg sm:text-xl lg:text-2xl leading-snug font-light ${
+                  darkMode ? "text-gray-200" : "text-gray-800"
+                }`}
+              > */}
+              <p
+                className={`text-lg sm:text-xl lg:text-2xl leading-snug font-light text-center lg:text-left ${
                   darkMode ? "text-gray-200" : "text-gray-800"
                 }`}
               >
@@ -90,7 +96,8 @@ function Clients() {
               />
 
               {/* Client Info */}
-              <div className="flex flex-col sm:flex-row sm:justify-between items-start sm:items-center gap-2 sm:gap-0">
+              {/* <div className="flex flex-col sm:flex-row sm:justify-between items-start sm:items-center gap-2 sm:gap-0"> */}
+              <div className="flex flex-col sm:flex-row sm:justify-between items-center sm:items-center gap-2 sm:gap-0 text-center sm:text-left">
                 <div>
                   <h3
                     className={`font-semibold text-base sm:text-lg ${
