@@ -93,7 +93,6 @@ function Clients() {
               />
 
               {/* Client Info */}
-              {/* <div className="flex flex-col sm:flex-row sm:justify-between items-start sm:items-center gap-2 sm:gap-0"> */}
               <div className="flex flex-col sm:flex-row sm:justify-between items-center sm:items-center gap-2 sm:gap-0 text-center sm:text-left">
                 <div>
                   <h3
