@@ -39,7 +39,10 @@ function About() {
         <div className="flex flex-col gap-6 text-center lg:text-left">
           {/* Title Component */}
           <div className="text-center lg:text-left">
-            <Title title="About Us" subtitle="Who We Are" />
+            <Title
+              title="Experience Homes That Elevate Your Lifestyle"
+              subtitle="Redefining Modern Luxury"
+            />
           </div>
 
           {/* Paragraph */}
@@ -49,16 +52,27 @@ function About() {
               darkMode ? "text-gray-300" : "text-gray-600"
             }`}
           >
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda
-            aliquid nemo quod culpa placeat eos. Esse impedit quam distinctio
-            obcaecati unde nemo doloremque minus laboriosam?
+            At Luxenest, we don’t just offer homes — we create experiences. Each
+            property is carefully selected to combine elegance, comfort, and
+            modern style, providing spaces that inspire, elevate, and make every
+            moment unforgettable.
           </p>
 
           {/* Button */}
           <div className="flex justify-center lg:justify-start">
-            <button className="button px-6 py-3 rounded-xl text-sm sm:text-base font-medium border transition duration-300">
-              Read More
-            </button>
+            {/* Button */}
+            <div className="flex justify-center lg:justify-start">
+              <button
+                onClick={() => {
+                  document
+                    .querySelector("#properties")
+                    ?.scrollIntoView({ behavior: "smooth" });
+                }}
+                className="button px-6 py-3 rounded-xl text-sm sm:text-base font-medium border transition duration-300"
+              >
+                Find Your Perfect Home
+              </button>
+            </div>
           </div>
         </div>
       </div>

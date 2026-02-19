@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useDarkMode } from "../components/DarkModeContext";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import heroImg from "../assets/images/hero1.webp";
+import heroVideo from "../assets/videos/hero.mp4";
 
 function Hero() {
   const { darkMode } = useDarkMode();
@@ -17,26 +17,32 @@ function Hero() {
     <section
       ref={ref}
       id="hero"
-      className={`relative w-full min-h-screen flex items-start sm:items-center justify-center pt-32 sm:pt-0 overflow-hidden 
-
+      className={`relative w-full min-h-screen flex items-start sm:items-center justify-center pt-32 sm:pt-0 overflow-hidden
         ${darkMode ? "bg-black" : "bg-gray-100"}`}
-      style={{
-        backgroundImage: `url(${heroImg})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
-      }}
     >
-      {/* Overlay */}
+      {/* Video Background */}
+      <video
+        className="absolute top-0 left-0 w-full h-full object-cover z-0"
+        src={heroVideo}
+        autoPlay
+        loop
+        muted
+        playsInline
+      ></video>
+
+      {/* Dark Gradient Overlay for clearer content */}
       <div
-        className={`absolute inset-0 ${
-          darkMode ? "bg-black/70" : "bg-black/40"
-        }`}
+        className={`absolute inset-0 z-10`}
+        style={{
+          background: darkMode
+            ? "linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85))"
+            : "linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7))",
+        }}
       ></div>
 
       {/* Content */}
       <motion.div
-        className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center"
+        className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center"
         initial={{ opacity: 0, y: 50 }}
         animate={controls}
         variants={{
@@ -58,7 +64,7 @@ function Hero() {
             darkMode ? "text-gray-400" : "text-gray-200"
           }`}
         >
-          Luxury Real Estate
+          Discover Luxury Living
         </motion.span>
 
         {/* Title */}
@@ -81,8 +87,8 @@ function Hero() {
             animation: "gradientMove 4s linear infinite",
           }}
         >
-          Live Beyond Luxury <br className="hidden sm:block" />
-          Your Dream Here
+          Homes That Inspire, Lives
+          <br className="hidden sm:block" /> That Flourish
         </motion.h1>
 
         {/* Paragraph */}
@@ -100,10 +106,11 @@ function Hero() {
             darkMode ? "text-gray-300" : "text-gray-100"
           }`}
         >
-          Experience elevated living with our exclusive collection of luxury
-          villas, modern apartments, and premium commercial spaces —
-          thoughtfully designed to deliver elegance, comfort, and lasting value
-          in every detail.
+          At LuxeNest, we specialize in connecting discerning clients with
+          exclusive properties that reflect their lifestyle and aspirations.
+          Whether it’s a modern apartment in the city, a beachfront villa, or a
+          premium commercial space, our team ensures a seamless, personalized,
+          and transparent real estate experience from start to finish.
         </motion.p>
 
         {/* CTA Buttons */}
@@ -120,17 +127,27 @@ function Hero() {
           className="mt-10 flex flex-col sm:flex-row justify-center gap-4"
         >
           <a
-            href="#properties"
+            href="#popular-areas"
+            onClick={(e) => {
+              e.preventDefault();
+              document
+                .querySelector("#popular-areas")
+                ?.scrollIntoView({ behavior: "smooth" });
+            }}
             className="secondary_button px-6 py-3 rounded-xl text-sm sm:text-base font-medium border transition duration-300 w-full sm:w-auto"
           >
             Browse Properties
           </a>
 
           <a
-            href="https://example.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className=" button px-6 py-3 rounded-xl text-sm sm:text-base font-medium hover:opacity-90 transition duration-300 w-full sm:w-auto"
+            href="#contact"
+            onClick={(e) => {
+              e.preventDefault();
+              document
+                .querySelector("#contact")
+                ?.scrollIntoView({ behavior: "smooth" });
+            }}
+            className="button px-6 py-3 rounded-xl text-sm sm:text-base font-medium hover:opacity-90 transition duration-300 w-full sm:w-auto"
           >
             Contact Us
           </a>

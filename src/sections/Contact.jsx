@@ -46,29 +46,35 @@ function ContactForm() {
         darkMode ? "bg-black text-gray-200" : "bg-[#f8f7f5] text-gray-900"
       }`}
     >
-      <div className="max-w-[1920px] mx-auto px-4 sm:px-6 md:px-10 lg:px-40">
+      {/* <div className="max-w-[1920px] mx-auto px-4 sm:px-6 md:px-10 lg:px-40"> */}
+      <div className="max-w-[1920px] mx-auto px-0 sm:px-6 md:px-10 lg:px-40">
         {/* HEADER */}
         <div className="mb-12 sm:mb-16 text-center lg:text-left">
-          <Title title="Contact us" subtitle="Get Into Touch" />
+          <Title
+            title="Get in Touch with Luxenest"
+            subtitle="We’re Here to Help"
+          />
         </div>
 
         {/* GRID */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16">
           {/* FORM CARD */}
+
           <div
-            className={`rounded-3xl shadow-xl p-6 sm:p-8 lg:p-10 border w-full ${
+            className={`rounded-3xl shadow-xl p-6 sm:p-8 lg:p-10 border w-full sm:max-w-none max-w-full mx-auto ${
               darkMode
                 ? "bg-gray-800 border-gray-700"
                 : "bg-white border-gray-200"
             }`}
           >
             <p
-              className={`mb-6 text-base leading-7 ${
+              className={`mb-6 text-base leading-7 text-center lg:text-left ${
                 darkMode ? "text-gray-400" : "text-gray-600"
               }`}
             >
-              Tell us what you’re looking for and we’ll help you find your dream
-              property.
+              Have questions or ready to find your dream home? Our team is here
+              to guide you every step of the way — fast, personal, and
+              hassle-free.
             </p>
 
             <form className="flex flex-col gap-5" onSubmit={handleSubmit}>
@@ -173,7 +179,9 @@ function ContactForm() {
                   : "bg-white border-gray-200"
               }`}
             >
-              <div className="flex items-center gap-3 mb-4 text-sm">
+              {/* <div className="flex items-center gap-3 mb-4 text-sm"> */}
+
+              <div className="flex items-center justify-center lg:justify-start gap-3 mb-4 text-sm text-center lg:text-left">
                 <FaHome className="text-[#fa9746]" />
                 <p>123 Luxury Avenue, Estate City</p>
               </div>

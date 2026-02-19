@@ -45,10 +45,14 @@ function Clients() {
       }`}
     >
       {/* <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start  lg:px-4 px-10 mb-28"> */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start px-0 sm:px-6 lg:px-4 mb-28">
-        {/* LEFT SIDE – Editorial Content */}
-        <div
+      {/* LEFT SIDE – Editorial Content */}
+      {/* <div
           className="order-1 lg:order-1 lg:sticky lg:top-32 top-auto "
+          data-aos="fade-up"
+          > */}
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start px-0 sm:px-6 lg:px-4 mb-28">
+        {/* <div
+          className="order-1 lg:order-1 relative lg:sticky lg:top-40 self-start"
           data-aos="fade-up"
         >
           <Title title="Real Stories" subtitle="CLIENTS EXPERIENCE!" />
@@ -60,6 +64,25 @@ function Clients() {
             Every property we represent carries a story — and every client
             experience reflects our commitment to precision, trust, and elevated
             living.
+          </p>
+        </div> */}
+        <div
+          className="order-1 lg:order-1 lg:sticky top-40 self-start"
+          data-aos="fade-up"
+        >
+          <Title
+            title="What Our Clients Say"
+            subtitle="Trusted by Homeowners & Investors"
+          />
+          <p
+            className="mt-6 sm:mt-10 text-base sm:text-lg lg:text-xl text-gray-600 dark:text-gray-400 leading-relaxed max-w-xl"
+            data-aos="fade-up"
+            data-aos-delay={240}
+          >
+            Our clients choose Luxenest for our commitment to quality, style,
+            and seamless service. From finding the perfect property to closing
+            the deal, we ensure every experience is smooth, rewarding, and
+            unforgettable.
           </p>
         </div>
 
@@ -90,8 +113,8 @@ function Clients() {
               <div
                 className={`w-16 sm:w-20 h-[2px] my-6 transition-all duration-500 ${
                   darkMode
-                    ? "bg-[#fa9746] group-hover:w-32"
-                    : "bg-[#fa9746] group-hover:w-32"
+                    ? "bg-[#fa9746] group-hover:w-64"
+                    : "bg-[#fa9746] group-hover:w-64"
                 }`}
               />
 

@@ -25,26 +25,19 @@ function Footer() {
   return (
     <footer
       className={`w-full pt-16 pb-4 transition-colors duration-500 ${
-        darkMode ? "bg-[#111111] text-gray-200" : "bg-white text-gray-900"
+        darkMode ? "bg-[#111111] text-gray-200" : "bg-[#ffffff] text-gray-900"
       }`}
     >
-      {/* Main Container aligned with Header */}
+      {/* Main Container */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-4 gap-10 sm:gap-16 text-center lg:text-left">
-          {/* Left Section */}
+        <div className="flex flex-col lg:flex-row gap-10 sm:gap-16 text-center lg:text-left">
+          {/* Left Section (Wider) */}
           <div
             data-aos="fade-up"
             data-aos-delay="100"
-            className="flex flex-col items-center lg:items-start gap-5"
+            className="flex-1 lg:flex-[2.5] flex flex-col items-center lg:items-start gap-5"
           >
-            {/* <h2 className="text-3xl sm:text-4xl font-serif font-bold">
-              LV<span className="font-light">Estates</span>
-            </h2> */}
-            <a
-              href="#hero"
-              onClick={(e) => handleNavClick(e, "#hero")}
-              className="flex items-center"
-            >
+            <a href="#hero" className="flex items-center">
               <img
                 src={luxeNestLogo}
                 alt="LuxeNest Logo"
@@ -58,8 +51,9 @@ function Footer() {
                 darkMode ? "text-gray-400" : "text-gray-600"
               }`}
             >
-              Luxury real estate solutions tailored for your dream home. Explore
-              modern apartments, villas, and commercial properties.
+              Luxenest is your gateway to curated luxury homes. We connect you
+              with properties that combine elegance, comfort, and style, making
+              every space a place to truly live and thrive.
             </p>
 
             <div className="flex flex-wrap gap-4 justify-center lg:justify-start mt-3">
@@ -87,12 +81,11 @@ function Footer() {
           <div
             data-aos="fade-right"
             data-aos-delay="200"
-            className="flex flex-col items-center lg:items-start"
+            className="flex-1 lg:flex-[1] flex flex-col items-center lg:items-start gap-5"
           >
             <h3 className="text-xl sm:text-2xl font-semibold mb-4">
               Quick Links
             </h3>
-
             <ul className="flex flex-col gap-3 text-sm sm:text-base">
               {[
                 "#hero",
@@ -119,24 +112,26 @@ function Footer() {
           <div
             data-aos="fade-up"
             data-aos-delay="300"
-            className="flex flex-col items-center lg:items-start"
+            className="flex-1 lg:flex-[1] flex flex-col items-center lg:items-start gap-5"
           >
             <h3 className="text-xl sm:text-2xl font-semibold mb-4">Contact</h3>
-
-            <div className="flex flex-col gap-3">
+            <div className="flex flex-col gap-3 w-full">
               <a
-                href="mailto:contact@luxenest.com"
-                className={`flex items-center gap-3 p-3 rounded-lg transition hover:bg-[#fa9746] hover:text-white break-words ${
-                  darkMode
-                    ? "bg-[#222222] text-gray-400"
-                    : "bg-gray-100 text-gray-700"
-                }`}
+                href="https://mail.google.com/mail/?view=cm&fs=1&to=contact@luxenest.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`flex items-center gap-3 p-3 rounded-lg transition-all duration-300 cursor-pointer
+  hover:bg-[#fa9746] hover:text-white hover:shadow-lg
+  ${darkMode ? "bg-gray-800 text-gray-200" : "bg-gray-100 text-gray-700"}`}
               >
-                <FaEnvelope /> contact@luxenest.com
+                <FaEnvelope />
+                contact@luxenest.com
               </a>
 
               <a
                 href="tel:+1234567890"
+                data-aos="fade-left"
+                data-aos-delay="340"
                 className={`flex items-center gap-3 p-3 rounded-lg transition hover:bg-[#fa9746] hover:text-white break-words ${
                   darkMode
                     ? "bg-[#222222] text-gray-400"
@@ -145,18 +140,19 @@ function Footer() {
               >
                 <FaPhone /> +123 456 7890
               </a>
-
               <a
-                href="https://www.google.com/maps?q=123+Luxury+Avenue+Estate+City"
+                href="https://www.google.com/maps?q=Elmwood+Ave,+Boston"
                 target="_blank"
                 rel="noopener noreferrer"
+                data-aos="fade-left"
+                data-aos-delay="360"
                 className={`flex items-center gap-3 p-3 rounded-lg transition hover:bg-[#fa9746] hover:text-white break-words ${
                   darkMode
                     ? "bg-[#222222] text-gray-400"
                     : "bg-gray-100 text-gray-700"
                 }`}
               >
-                <FaMapMarkerAlt /> 123 Luxury Avenue, Estate City
+                <FaMapMarkerAlt /> Elmwood Ave, Boston
               </a>
             </div>
           </div>
@@ -165,23 +161,21 @@ function Footer() {
           <div
             data-aos="fade-left"
             data-aos-delay="400"
-            className="flex flex-col items-center lg:items-start"
+            className="flex-1 lg:flex-[1.5] flex flex-col items-center lg:items-start gap-5"
           >
             <h3 className="text-xl sm:text-2xl font-semibold mb-4">
               Newsletter
             </h3>
-
             <p
-              className={`text-sm sm:text-base mb-4 ${
-                darkMode ? "text-gray-400" : "text-gray-700"
-              }`}
+              className={`text-sm sm:text-base mb-4 ${darkMode ? "text-gray-400" : "text-gray-700"}`}
             >
               Subscribe to get the latest property listings and updates.
             </p>
-
             <form
               onSubmit={handleSubscribe}
               className="flex flex-col gap-3 w-full"
+              data-aos="fade-up"
+              data-aos-delay="420"
             >
               <input
                 type="email"
@@ -195,7 +189,6 @@ function Footer() {
                     : "border-gray-300 focus:ring-[#fa9746] bg-white text-gray-900"
                 }`}
               />
-
               <button
                 type="submit"
                 className="py-3 rounded-xl bg-[#fa9746] text-white font-semibold transition-transform hover:scale-105 w-full sm:w-auto"
@@ -209,15 +202,13 @@ function Footer() {
 
       {/* Bottom */}
       <div
-        // data-aos="fade-up"
-        // data-aos-delay="500"
         className={`mt-12 pt-6 border-t text-center text-sm transition ${
           darkMode
             ? "border-gray-700 text-gray-400"
             : "border-gray-300 text-gray-600"
         }`}
       >
-        &copy; {new Date().getFullYear()} LuxeNest. All rights reserved.
+        © {new Date().getFullYear()} Luxenest | Curating Luxury Homes Worldwide
       </div>
     </footer>
   );

@@ -1,5 +1,4 @@
-import React from "react";
-import { useEffect } from "react";
+import React, { useEffect } from "react";
 import { DarkModeProvider } from "./components/DarkModeContext";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
@@ -23,9 +22,10 @@ function App() {
       mirror: false,
     });
   }, []);
+
   return (
     <DarkModeProvider>
-      <Header />
+      <Header /> {/* Optional: keep outside gradient if fixed */}
       <Hero />
       <About />
       <Services />
@@ -33,8 +33,7 @@ function App() {
       <Properties />
       <Clients />
       <Contact />
-
-      <Footer />
+      <Footer /> {/* Optional: outside gradient */}
     </DarkModeProvider>
   );
 }

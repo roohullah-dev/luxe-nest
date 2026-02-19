@@ -126,7 +126,7 @@ function Properties() {
                     rel="noopener noreferrer"
                     className={`relative font-medium pb-1 ${
                       darkMode ? "text-white" : "text-black"
-                    } after:absolute after:left-0 after:bottom-0 after:w-0 after:h-[1px] after:bg-current after:transition-all after:duration-300 hover:after:w-full hover:text-red-600`}
+                    } after:absolute after:left-0 after:bottom-0 after:w-0 after:h-[1px] after:bg-current after:transition-all after:duration-300 hover:after:w-full hover:text-[#fa9746]`}
                   >
                     Explore Property
                   </a>
