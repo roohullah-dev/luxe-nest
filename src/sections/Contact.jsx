@@ -172,27 +172,17 @@ function ContactForm() {
 
           {/* INFO + MAP */}
           <div className="flex flex-col gap-6 w-full">
-            <div
-              className={`p-6 sm:p-8 rounded-2xl shadow-lg border w-full ${
-                darkMode
-                  ? "bg-gray-800 border-gray-700"
-                  : "bg-white border-gray-200"
-              }`}
-            >
-              {/* <div className="flex items-center gap-3 mb-4 text-sm"> */}
-
-              <div className="flex items-center justify-center lg:justify-start gap-3 mb-4 text-sm text-center lg:text-left">
-                <FaHome className="text-[#fa9746]" />
-                <p>123 Luxury Avenue, Estate City</p>
-              </div>
-              <div className="flex items-center gap-3 mb-4 text-sm">
-                <FaPhoneAlt className="text-[#fa9746]" />
-                <p>+123 456 7890</p>
-              </div>
-              <div className="flex items-center gap-3 text-sm">
-                <FaEnvelope className="text-[#fa9746]" />
-                <p>contact@luxenest.com</p>
-              </div>
+            <div className="flex items-center gap-3 mb-4 text-sm justify-center lg:justify-start">
+              <FaHome className="text-[#fa9746]" />
+              <p>123 Luxury Avenue, Estate City</p>
+            </div>
+            <div className="flex items-center gap-3 mb-4 text-sm justify-center lg:justify-start">
+              <FaPhoneAlt className="text-[#fa9746]" />
+              <p>+123 456 7890</p>
+            </div>
+            <div className="flex items-center gap-3 text-sm justify-center lg:justify-start">
+              <FaEnvelope className="text-[#fa9746]" />
+              <p>contact@luxenest.com</p>
             </div>
 
             <div className="rounded-2xl overflow-hidden shadow-lg w-full">
