@@ -51,7 +51,7 @@ const Title = ({ title, subtitle }) => {
             transition: { duration: 1, ease: "easeOut" },
           },
         }}
-        className={`bg-amber-400 border-8 text-4xl sm:text-5xl lg:text-5xl font-bold bg-clip-text text-transparent relative z-10 `}
+        className={`bg-amber-400 border-8 text-4xl sm:text-5xl lg:text-5xl  bg-clip-text text-transparent relative z-10 `}
         style={{
           backgroundImage: darkMode
             ? "linear-gradient(90deg, #ff5f6d, #ffc371, #ff5f6d)"

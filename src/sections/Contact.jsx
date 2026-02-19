@@ -46,12 +46,12 @@ function ContactForm() {
         darkMode ? "bg-black text-gray-200" : "bg-[#f8f7f5] text-gray-900"
       }`}
     >
-      {/* <div className="max-w-[1920px] mx-auto px-4 sm:px-6 md:px-10 lg:px-40"> */}
-      <div className="max-w-[1920px] mx-auto px-0 sm:px-6 md:px-10 lg:px-40">
+      {/* <div className="max-w-[1920px] mx-auto px-4 sm:px-6 md:px-10 lg:px-40 pt-14"> */}
+      <div className="max-w-[1920px] mx-auto px-6 sm:px-6 md:px-10 lg:px-40 pt-14">
         {/* HEADER */}
         <div className="mb-12 sm:mb-16 text-center lg:text-left">
           <Title
-            title="Get in Touch with Luxenest"
+            title="Get in Touch with LuxeNest"
             subtitle="We’re Here to Help"
           />
         </div>

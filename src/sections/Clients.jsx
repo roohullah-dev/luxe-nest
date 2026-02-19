@@ -44,28 +44,8 @@ function Clients() {
         darkMode ? "bg-black" : "bg-gray-100"
       }`}
     >
-      {/* <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start  lg:px-4 px-10 mb-28"> */}
       {/* LEFT SIDE – Editorial Content */}
-      {/* <div
-          className="order-1 lg:order-1 lg:sticky lg:top-32 top-auto "
-          data-aos="fade-up"
-          > */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start px-0 sm:px-6 lg:px-4 mb-28">
-        {/* <div
-          className="order-1 lg:order-1 relative lg:sticky lg:top-40 self-start"
-          data-aos="fade-up"
-        >
-          <Title title="Real Stories" subtitle="CLIENTS EXPERIENCE!" />
-          <p
-            className="mt-6 sm:mt-10 text-base sm:text-lg lg:text-xl text-gray-600 dark:text-gray-400 leading-relaxed max-w-xl"
-            data-aos="fade-up"
-            data-aos-delay={240}
-          >
-            Every property we represent carries a story — and every client
-            experience reflects our commitment to precision, trust, and elevated
-            living.
-          </p>
-        </div> */}
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start px-0 sm:px-6 lg:px-4">
         <div
           className="order-1 lg:order-1 lg:sticky top-40 self-start"
           data-aos="fade-up"
@@ -95,12 +75,6 @@ function Clients() {
               data-aos-delay={index * 140}
               className="group"
             >
-              {/* Quote */}
-              {/* <p
-                className={`text-lg sm:text-xl lg:text-2xl leading-snug font-light ${
-                  darkMode ? "text-gray-200" : "text-gray-800"
-                }`}
-              > */}
               <p
                 className={`text-lg sm:text-xl lg:text-2xl leading-snug font-light text-center lg:text-left ${
                   darkMode ? "text-gray-200" : "text-gray-800"
