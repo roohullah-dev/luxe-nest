@@ -35,8 +35,8 @@ function Hero() {
         className={`absolute inset-0 z-10`}
         style={{
           background: darkMode
-            ? "linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85))"
-            : "linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7))",
+            ? "linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75))"
+            : "linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6))",
         }}
       ></div>
 
