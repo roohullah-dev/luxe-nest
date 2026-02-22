@@ -31,14 +31,30 @@ function Hero() {
       ></video>
 
       {/* Dark Gradient Overlay for clearer content */}
-      <div
+      {/* <div
         className={`absolute inset-0 z-10`}
         style={{
           background: darkMode
             ? "linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75))"
             : "linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6))",
         }}
-      ></div>
+      ></div> */}
+      <motion.div
+        className="absolute inset-0 z-10"
+        initial={{ opacity: 0 }}
+        animate={controls}
+        variants={{
+          visible: {
+            opacity: 0.6, // or 0.75 for dark mode
+            transition: { duration: 0.5 },
+          },
+        }}
+        style={{
+          background: darkMode
+            ? "linear-gradient(rgba(0,0,0,0.79), rgba(0,0,0,0.79))"
+            : "linear-gradient(rgba(0,0,0,0.66), rgba(0,0,0,0.66))",
+        }}
+      ></motion.div>
 
       {/* Content */}
       <motion.div
